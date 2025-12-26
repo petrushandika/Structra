@@ -267,6 +267,315 @@ Features section with:
 
 ---
 
+## 🎨 Example 4: Flower Shape with CSS Mask
+
+### Input
+
+**Design:** Decorative flower shape using CSS mask technique.
+
+**Textual Description:**
+```
+Create a flower shape using CSS mask:
+- 5 petals arranged in a circle
+- Gradient background (pink to cyan)
+- Aspect ratio 1:1
+- Responsive sizing
+```
+
+### Canonical Schema Output
+
+```json
+{
+  "backgroundStrategy": {
+    "type": "css-mask",
+    "shape": "flower",
+    "position": "center",
+    "technique": {
+      "usesMask": true,
+      "usesAspectRatio": "1 / 1",
+      "usesCalc": true,
+      "usesClipPath": false,
+      "usesCustomProperties": false
+    },
+    "reason": "Flower shape can be achieved with CSS mask using radial gradients, better performance than SVG"
+  },
+  "cssEffects": {
+    "filters": {},
+    "backdropFilter": {},
+    "transforms": {}
+  }
+}
+```
+
+### Generated Code
+
+```css
+.flower {
+  aspect-ratio: 1 / 1;
+  width: calc(100% - 2rem);
+  max-width: 300px;
+  mask: 
+    radial-gradient(circle at 30% 30%, black 20%, transparent 20%),
+    radial-gradient(circle at 70% 30%, black 20%, transparent 20%),
+    radial-gradient(circle at 50% 70%, black 20%, transparent 20%),
+    radial-gradient(circle at 20% 70%, black 20%, transparent 20%),
+    radial-gradient(circle at 80% 70%, black 20%, transparent 20%);
+  mask-composite: intersect;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+}
+```
+
+---
+
+## 🎨 Example 5: Subtract Shape with Clip-Path
+
+### Input
+
+**Design:** Card with subtract shape (cutout) using clip-path.
+
+**Textual Description:**
+```
+Card component with:
+- Subtract shape (rectangular cutout) on top-right
+- Clip-path technique
+- Responsive design
+```
+
+### Canonical Schema Output
+
+```json
+{
+  "backgroundStrategy": {
+    "type": "clip-path",
+    "shape": "subtract",
+    "position": "top-right",
+    "technique": {
+      "usesMask": false,
+      "usesAspectRatio": null,
+      "usesCalc": false,
+      "usesClipPath": true,
+      "usesCustomProperties": false
+    },
+    "reason": "Subtract shape (cutout) best achieved with clip-path polygon"
+  }
+}
+```
+
+### Generated Code
+
+```css
+.subtract-card {
+  background: #667eea;
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 100%, 0% 100%,
+    85% 5%, 95% 5%, 95% 15%, 85% 15%
+  );
+  padding: 2rem;
+}
+```
+
+---
+
+## 🎨 Example 6: CSS Animation Example
+
+### Input
+
+**Design:** Button with hover animation and loading spinner.
+
+**Textual Description:**
+```
+Button component with:
+- Hover scale animation
+- Loading spinner animation
+- Smooth transitions
+- Respect prefers-reduced-motion
+```
+
+### Canonical Schema Output
+
+```json
+{
+  "cssAnimations": [
+    {
+      "name": "scaleUp",
+      "type": "transition",
+      "duration": "200ms",
+      "timingFunction": "ease-out",
+      "target": "button",
+      "properties": ["transform"]
+    },
+    {
+      "name": "spin",
+      "type": "keyframe",
+      "duration": "1s",
+      "timingFunction": "linear",
+      "target": "spinner",
+      "properties": ["transform"]
+    }
+  ]
+}
+```
+
+### Generated Code
+
+```css
+.button {
+  background: #667eea;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: transform 200ms ease-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+  
+  .spinner {
+    animation: none;
+  }
+}
+```
+
+---
+
+## 🎨 Example 7: Container Query Layout
+
+### Input
+
+**Design:** Card component that adapts based on container size, not viewport.
+
+**Textual Description:**
+```
+Card component with:
+- Container query responsiveness
+- Changes layout at 400px container width
+- Uses container query units for sizing
+```
+
+### Canonical Schema Output
+
+```json
+{
+  "modernCSS": {
+    "containerQueries": {
+      "enabled": true,
+      "containerType": "inline-size",
+      "containerName": "card-container"
+    }
+  }
+}
+```
+
+### Generated Code
+
+```css
+.card-container {
+  container-type: inline-size;
+  container-name: card-container;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@container card-container (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  
+  .card-title {
+    font-size: clamp(1rem, 5cqw, 2rem);
+  }
+}
+```
+
+---
+
+## 🎨 Example 8: CSS-only Pattern Background
+
+### Input
+
+**Design:** Section with CSS-only dot pattern background.
+
+**Textual Description:**
+```
+Section with:
+- CSS-only dot pattern background
+- No SVG or images
+- Responsive pattern
+- Gradient overlay
+```
+
+### Canonical Schema Output
+
+```json
+{
+  "backgroundStrategy": {
+    "type": "css-pattern",
+    "shape": "dots",
+    "position": "full",
+    "technique": {
+      "usesMask": false,
+      "usesAspectRatio": null,
+      "usesCalc": false,
+      "usesClipPath": false,
+      "usesCustomProperties": true
+    },
+    "reason": "CSS-only pattern is more performant than image, easier to customize"
+  },
+  "cssVariables": {
+    "colors": {
+      "--pattern-color": "#667eea",
+      "--pattern-size": "20px"
+    }
+  }
+}
+```
+
+### Generated Code
+
+```css
+.pattern-section {
+  --pattern-color: #667eea;
+  --pattern-size: 20px;
+  
+  background-image: 
+    radial-gradient(circle, var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  background-size: var(--pattern-size) var(--pattern-size), 100% 100%;
+  background-position: 0 0, 0 0;
+}
+```
+
+---
+
 ## 🔄 Before/After Comparison
 
 ### Before (Manual Implementation)
@@ -424,36 +733,14 @@ If you modify generated code:
 </td>
 <td align="right">
 
-**[Next: Prompt Templates →](13%20Prompt%20Templates.md)**  
-*Prompt Templates*
+**[Next: Advanced CSS Techniques →](14%20Advanced%20CSS%20Techniques.md)**  
+*Advanced CSS Techniques*
 
 </td>
 </tr>
 </table>
 
 ---
-
-<details>
-<summary><b>📚 Quick Navigation</b></summary>
-
-<table>
-<tr>
-<td>
-
-**Previous:** [Getting Started](11%20Getting%20Started.md)  
-Installation, setup, and first steps guide
-
-</td>
-<td>
-
-**Next:** [Prompt Templates](13%20Prompt%20Templates.md)  
-Prompt templates for role-based reasoning
-
-</td>
-</tr>
-</table>
-
-</details>
 
 </div>
 

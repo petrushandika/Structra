@@ -19,10 +19,12 @@ optimized for **rapid iteration, local-first AI development, and future scalabil
 ## 1️⃣ Frontend Stack (SaaS Dashboard & Playground)
 
 ### Core Framework
-- **Next.js (App Router)**
+- **Next.js 16+ (App Router with Turbopack)**
   - SEO-ready landing pages
   - Server Actions for AI requests
   - Production-ready for SaaS B2B
+  - Turbopack as default bundler for faster builds
+  - React 19 support
 
 - **TypeScript**
   - Strong typing for complex AI outputs
@@ -176,9 +178,12 @@ Code Generator
   - Prompt versions
   - AI output history
 
-- **Prisma ORM**
-  - Schema safety
+- **Prisma ORM 6+**
+  - Type-safe database client
+  - Schema safety and validation
   - Migration management
+  - Database introspection
+  - Query optimization
 
 - **Redis**
   - Caching AI responses
@@ -281,28 +286,6 @@ Structra treats UI conversion as an **engineering problem**, not a visual one.
 </table>
 
 ---
-
-<details>
-<summary><b>📚 Quick Navigation</b></summary>
-
-<table>
-<tr>
-<td>
-
-**Previous:** [Engineering Constraints](07%20Engineering%20Constraints.md)  
-Constraints, forbidden patterns, design system awareness
-
-</td>
-<td>
-
-**Next:** [Architecture](09%20Architecture.md)  
-System architecture, components, and data flow
-
-</td>
-</tr>
-</table>
-
-</details>
 
 </div>
 

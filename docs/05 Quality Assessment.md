@@ -161,27 +161,5 @@ Estimate of how much manual adjustment is needed:
 
 ---
 
-<details>
-<summary><b>📚 Quick Navigation</b></summary>
-
-<table>
-<tr>
-<td>
-
-**Previous:** [AI Roles](04%20AI%20Roles.md)  
-Internal role-based reasoning
-
-</td>
-<td>
-
-**Next:** [Ambiguity Handling](06%20Ambiguity%20Handling.md)  
-Ambiguity and failure handling
-
-</td>
-</tr>
-</table>
-
-</details>
-
 </div>
 

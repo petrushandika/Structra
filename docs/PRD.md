@@ -492,6 +492,74 @@ System must provide web dashboard for users.
 - ✅ Schema editor functional
 - ✅ Code preview available
 
+#### FR-009: Advanced CSS Generation
+
+**Priority:** P1 (High)
+
+**Description:**
+System must generate advanced CSS techniques including mask, aspect-ratio, calc, clip-path, custom properties, container queries, modern selectors, CSS layers, and filters.
+
+**Requirements:**
+- Generate CSS mask for complex shapes
+- Generate aspect-ratio for responsive containers
+- Use calc() for dynamic calculations
+- Generate clip-path for geometric shapes
+- Support CSS custom properties
+- Generate container queries
+- Use modern selectors (:has(), :is(), :where())
+- Support CSS layers (@layer)
+- Generate backdrop-filter and CSS filters
+
+**Acceptance Criteria:**
+- ✅ Advanced CSS techniques generated correctly
+- ✅ Browser compatibility considered
+- ✅ Fallbacks provided when needed
+- ✅ Performance optimized
+
+#### FR-010: CSS-only Shape Generation
+
+**Priority:** P1 (High)
+
+**Description:**
+System must generate CSS-only shapes (without SVG) when appropriate, including flower, triangle, starburst, polygon, ribbon, and custom shapes.
+
+**Requirements:**
+- Detect when CSS-only is appropriate vs SVG
+- Generate CSS-only shapes using mask, clip-path, pseudo-elements
+- Support all shape types (flower, triangle, starburst, polygon, ribbon, blob, wave, curve, subtract)
+- Generate custom corners and borders
+- Create section dividers
+- Generate tooltips and speech bubbles
+- Create loaders and spinners
+
+**Acceptance Criteria:**
+- ✅ CSS-only shapes generated when appropriate
+- ✅ All shape types supported
+- ✅ Performance optimized
+- ✅ Browser compatibility checked
+
+#### FR-011: CSS Animation Generation
+
+**Priority:** P1 (High)
+
+**Description:**
+System must generate CSS animations and transitions including @keyframes, animation properties, transitions, and respect accessibility preferences.
+
+**Requirements:**
+- Generate @keyframes animations
+- Create CSS transitions
+- Animate transform and opacity (GPU-accelerated)
+- Respect prefers-reduced-motion
+- Generate animation sequences
+- Support staggered animations
+- Provide performance-optimized animations
+
+**Acceptance Criteria:**
+- ✅ Animations generated correctly
+- ✅ Accessibility respected
+- ✅ Performance optimized
+- ✅ GPU-accelerated properties used
+
 ### Non-Functional Requirements
 
 #### NFR-001: Performance
@@ -553,9 +621,9 @@ System must provide web dashboard for users.
 ### Architecture
 
 **Frontend:**
-- Next.js 14+ (App Router)
-- React 18+
-- TypeScript
+- Next.js 16+ (App Router with Turbopack)
+- React 19+
+- TypeScript 5.1+
 - Tailwind CSS
 - Monaco Editor (code preview)
 
@@ -571,7 +639,8 @@ System must provide web dashboard for users.
 - Role-based reasoning pipeline
 
 **Database:**
-- PostgreSQL (primary database)
+- PostgreSQL 15+ (primary database)
+- Prisma ORM (database abstraction and migrations)
 - Qdrant (vector database for knowledge base)
 - Redis (caching)
 
@@ -673,6 +742,7 @@ interface QualityAssessment {
 
 - **Analysis Accuracy:** 85%+ visual accuracy
 - **Code Quality:** 90%+ of code requires minimal adjustment
+- **CSS Generation Accuracy:** 90%+ accuracy for advanced CSS features
 - **Performance:** Average analysis time < 10 seconds
 - **Uptime:** 99.9% availability
 

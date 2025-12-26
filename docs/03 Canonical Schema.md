@@ -48,9 +48,16 @@ Without this schema, output is considered **invalid**.
   },
 
   "backgroundStrategy": {
-    "type": "svg | css-gradient | pseudo-element",
-    "shape": "blob | wave | curve | none",
-    "position": "right | left | full",
+    "type": "svg | css-gradient | pseudo-element | css-mask | clip-path | css-only | css-pattern | css-filter",
+    "shape": "blob | wave | curve | flower | triangle | starburst | polygon | ribbon | subtract | custom | none",
+    "position": "right | left | full | top | bottom",
+    "technique": {
+      "usesMask": false,
+      "usesAspectRatio": null,
+      "usesCalc": false,
+      "usesClipPath": false,
+      "usesCustomProperties": false
+    },
     "reason": "Complex organic shape better handled by SVG"
   },
 
@@ -69,7 +76,75 @@ Without this schema, output is considered **invalid**.
   ],
 
   "assumptions": [],
-  "ambiguities": []
+  "ambiguities": [],
+  
+  "cssAnimations": [
+    {
+      "name": "fadeIn",
+      "type": "keyframe | transition",
+      "duration": "300ms",
+      "timingFunction": "ease-in-out",
+      "target": "component | section | element",
+      "properties": ["opacity", "transform"]
+    }
+  ],
+  
+  "cssEffects": {
+    "filters": {
+      "blur": null,
+      "brightness": null,
+      "contrast": null,
+      "dropShadow": null,
+      "grayscale": null,
+      "hueRotate": null,
+      "invert": null,
+      "saturate": null,
+      "sepia": null
+    },
+    "backdropFilter": {
+      "blur": null,
+      "brightness": null,
+      "saturate": null
+    },
+    "transforms": {
+      "translate": null,
+      "rotate": null,
+      "scale": null,
+      "skew": null
+    }
+  },
+  
+  "cssVariables": {
+    "colors": {
+      "--primary-color": "#000000",
+      "--secondary-color": "#ffffff"
+    },
+    "spacing": {
+      "--spacing-base": "4px"
+    },
+    "typography": {
+      "--font-family-sans": "Inter, sans-serif"
+    }
+  },
+  
+  "modernCSS": {
+    "containerQueries": {
+      "enabled": false,
+      "containerType": "inline-size | normal | size",
+      "containerName": null
+    },
+    "hasSelector": {
+      "enabled": false,
+      "useCases": []
+    },
+    "cssLayers": {
+      "enabled": false,
+      "layers": []
+    },
+    "cssNesting": {
+      "enabled": false
+    }
+  }
 }
 ```
 
@@ -115,9 +190,15 @@ Selected layout strategy:
 
 ### `backgroundStrategy`
 Strategy for background and abstract shapes:
-- `type`: Technology used (svg, css-gradient, pseudo-element)
-- `shape`: Shape type (blob, wave, curve, none)
-- `position`: Shape position (right, left, full)
+- `type`: Technology used (svg, css-gradient, pseudo-element, css-mask, clip-path, css-only, css-pattern, css-filter)
+- `shape`: Shape type (blob, wave, curve, flower, triangle, starburst, polygon, ribbon, subtract, custom, none)
+- `position`: Shape position (right, left, full, top, bottom)
+- `technique`: Advanced CSS techniques used:
+  - `usesMask`: Whether CSS mask is used
+  - `usesAspectRatio`: Aspect ratio value (e.g., "1 / 1", "16 / 9") or null
+  - `usesCalc`: Whether calc() function is used
+  - `usesClipPath`: Whether clip-path is used
+  - `usesCustomProperties`: Whether CSS custom properties are used
 - `reason`: Reasoning for strategy selection
 
 ### `layering`
@@ -137,6 +218,41 @@ List of assumptions made by AI
 
 ### `ambiguities`
 List of areas with ambiguities and how AI handles them
+
+### `cssAnimations`
+Array of CSS animations and transitions:
+- `name`: Animation name (for keyframes) or transition target
+- `type`: "keyframe" for @keyframes animations or "transition" for CSS transitions
+- `duration`: Animation/transition duration (e.g., "300ms", "1s")
+- `timingFunction`: Timing function (e.g., "ease-in-out", "cubic-bezier(...)")
+- `target`: What element is animated (component, section, element)
+- `properties`: Array of CSS properties being animated (e.g., ["opacity", "transform"])
+
+### `cssEffects`
+CSS effects and filters applied:
+- `filters`: Object with filter properties (blur, brightness, contrast, dropShadow, etc.)
+- `backdropFilter`: Object with backdrop-filter properties
+- `transforms`: Object with transform properties (translate, rotate, scale, skew)
+
+### `cssVariables`
+CSS custom properties (CSS variables) used:
+- `colors`: Color variables (e.g., "--primary-color": "#000000")
+- `spacing`: Spacing variables (e.g., "--spacing-base": "4px")
+- `typography`: Typography variables (e.g., "--font-family-sans": "Inter, sans-serif")
+
+### `modernCSS`
+Modern CSS features used:
+- `containerQueries`: Container query configuration:
+  - `enabled`: Whether container queries are used
+  - `containerType`: Type of container (inline-size, normal, size)
+  - `containerName`: Optional container name
+- `hasSelector`: :has() selector usage:
+  - `enabled`: Whether :has() selector is used
+  - `useCases`: Array of use case descriptions
+- `cssLayers`: CSS @layer usage:
+  - `enabled`: Whether CSS layers are used
+  - `layers`: Array of layer names
+- `cssNesting`: Whether CSS nesting is used
 
 ---
 
@@ -168,28 +284,6 @@ List of areas with ambiguities and how AI handles them
 </table>
 
 ---
-
-<details>
-<summary><b>📚 Quick Navigation</b></summary>
-
-<table>
-<tr>
-<td>
-
-**Previous:** [MVP](02%20MVP.md)  
-Core system prompt and main specifications
-
-</td>
-<td>
-
-**Next:** [AI Roles](04%20AI%20Roles.md)  
-Internal role-based reasoning
-
-</td>
-</tr>
-</table>
-
-</details>
 
 </div>
 

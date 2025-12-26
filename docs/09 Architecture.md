@@ -12,17 +12,18 @@ Structra is an AI system designed to analyze visual designs and generate maintai
 
 ## 🧩 System Components
 
-### Frontend Layer (Next.js)
+### Frontend Layer (Next.js 16)
 
 ```
 ┌─────────────────────────────────────┐
-│   Next.js App (SaaS Dashboard)      │
+│   Next.js 16 App (SaaS Dashboard)  │
 ├─────────────────────────────────────┤
 │  - User Interface                   │
 │  - Image Upload                     │
 │  - Code Preview (Monaco Editor)     │
 │  - Schema Editor                    │
 │  - Project Management               │
+│  - Turbopack (Fast Bundling)        │
 └─────────────────────────────────────┘
 ```
 
@@ -223,7 +224,7 @@ The system uses RAG (Retrieval-Augmented Generation) to:
 └─────────────┘
 
 ┌─────────────┐
-│ PostgreSQL  │ ← Structured data
+│ PostgreSQL  │ ← Structured data (via Prisma ORM)
 └─────────────┘
 
 ┌─────────────┐
@@ -234,7 +235,7 @@ The system uses RAG (Retrieval-Augmented Generation) to:
 ### Internal Services
 
 - **Redis** — Caching and rate limiting
-- **Prisma ORM** — Database abstraction
+- **Prisma ORM 6+** — Type-safe database client, migrations, and query builder
 - **Sharp** — Image processing
 
 ---
@@ -363,28 +364,6 @@ The system uses RAG (Retrieval-Augmented Generation) to:
 </table>
 
 ---
-
-<details>
-<summary><b>📚 Quick Navigation</b></summary>
-
-<table>
-<tr>
-<td>
-
-**Previous:** [Tech Stack](08%20Tech%20Stack.md)  
-Technologies used to build Structra
-
-</td>
-<td>
-
-**Next:** [API Documentation](10%20API%20Documentation.md)  
-API endpoints, request/response formats, examples
-
-</td>
-</tr>
-</table>
-
-</details>
 
 </div>
 

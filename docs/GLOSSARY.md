@@ -183,6 +183,78 @@ The approach for managing element layering:
 
 **Related**: [03 Canonical Schema](03%20Canonical%20Schema.md)
 
+### CSS Mask
+
+CSS property that allows creating complex transparency effects and cutouts using mask images or gradients.
+
+**Use Cases:**
+- Creating flower shapes
+- Complex cutouts
+- Vignette effects
+- Combining multiple shapes
+
+**Related**: [14 Advanced CSS Techniques](14%20Advanced%20CSS%20Techniques.md)
+
+### Aspect Ratio
+
+CSS property that maintains consistent proportions of elements, especially useful for responsive containers.
+
+**Example**: `aspect-ratio: 16 / 9` maintains 16:9 ratio regardless of width.
+
+**Related**: [14 Advanced CSS Techniques](14%20Advanced%20CSS%20Techniques.md)
+
+### Clip Path
+
+CSS property that creates geometric cutouts and shapes using polygon, circle, or ellipse functions.
+
+**Use Cases:**
+- Geometric shapes (triangle, hexagon, star)
+- Notches and cutouts
+- Decorative elements
+- Image cropping
+
+**Related**: [14 Advanced CSS Techniques](14%20Advanced%20CSS%20Techniques.md), [15 CSS Shapes & Patterns](15%20CSS%20Shapes%20%26%20Patterns.md)
+
+### Container Queries
+
+CSS feature that allows styling based on container size rather than viewport size, enabling component-level responsiveness.
+
+**Syntax**: `@container (min-width: 400px) { ... }`
+
+**Related**: [18 Modern CSS Features](18%20Modern%20CSS%20Features.md)
+
+### CSS Layers
+
+CSS feature (@layer) that provides cascade control and style organization, allowing better management of style priorities.
+
+**Use Cases:**
+- Framework organization
+- Style prioritization
+- Design system structure
+- Override management
+
+**Related**: [18 Modern CSS Features](18%20Modern%20CSS%20Features.md)
+
+### :has() Selector
+
+Modern CSS selector that allows selecting parent elements based on their children or siblings.
+
+**Example**: `.card:has(.badge)` selects cards that contain a badge element.
+
+**Related**: [18 Modern CSS Features](18%20Modern%20CSS%20Features.md)
+
+### CSS-only
+
+Approach of creating shapes, effects, and patterns using pure CSS (mask, clip-path, pseudo-elements) without SVG or images.
+
+**Advantages:**
+- Better performance
+- Easier to maintain
+- More responsive
+- Smaller file size
+
+**Related**: [17 CSS-only Solutions](17%20CSS-only%20Solutions.md)
+
 ### Assumptions
 
 Explicitly documented assumptions made by AI during analysis. All assumptions must be recorded in the canonical schema and can be modified by users.

@@ -127,27 +127,5 @@ Output (Code + Documentation)
 
 ---
 
-<details>
-<summary><b>📚 Quick Navigation</b></summary>
-
-<table>
-<tr>
-<td>
-
-**Previous:** [Canonical Schema](03%20Canonical%20Schema.md)  
-Single source of truth for AI processes
-
-</td>
-<td>
-
-**Next:** [Quality Assessment](05%20Quality%20Assessment.md)  
-Quality assessment system and confidence signals
-
-</td>
-</tr>
-</table>
-
-</details>
-
 </div>
 

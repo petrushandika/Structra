@@ -7,6 +7,88 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2025-01-20
+
+### Added
+
+- **Advanced CSS Generation Support**
+  - CSS Mask generation for complex shapes
+  - Aspect Ratio support for responsive containers
+  - Calc() function usage for dynamic calculations
+  - Clip-path generation for geometric shapes
+  - CSS Custom Properties support
+  - Container Queries implementation
+  - Modern Selectors (:has(), :is(), :where())
+  - CSS Layers (@layer) support
+  - Backdrop Filter and CSS Filters
+
+- **CSS-only Shape Generation**
+  - Flower, triangle, starburst, polygon, ribbon shapes
+  - Custom corners and borders
+  - Section dividers
+  - Tooltips and speech bubbles
+  - Loaders and spinners
+  - CSS-only patterns
+
+- **CSS Animations & Transitions**
+  - @keyframes animation generation
+  - CSS transition support
+  - Transform animations (GPU-accelerated)
+  - Accessibility support (prefers-reduced-motion)
+  - Performance-optimized animations
+
+- **Modern CSS Features**
+  - Container Queries for component-level responsiveness
+  - :has() selector for parent selection
+  - CSS Layers for style organization
+  - CSS Nesting support
+  - Dynamic viewport units
+  - Container query units
+  - Fluid typography
+
+- **Documentation**
+  - [14 Advanced CSS Techniques](14%20Advanced%20CSS%20Techniques.md) - Comprehensive guide to advanced CSS
+  - [15 CSS Shapes & Patterns](15%20CSS%20Shapes%20%26%20Patterns.md) - All shape types and patterns
+  - [16 CSS Animations & Transitions](16%20CSS%20Animations%20%26%20Transitions.md) - Animation guide
+  - [17 CSS-only Solutions](17%20CSS-only%20Solutions.md) - CSS-only vs SVG decision guide
+  - [18 Modern CSS Features](18%20Modern%20CSS%20Features.md) - Modern CSS features guide
+  - [19 CSS Performance & Optimization](19%20CSS%20Performance%20%26%20Optimization.md) - Performance optimization guide
+
+### Changed
+
+- Extended Canonical Schema to include:
+  - `cssAnimations` array for animation definitions
+  - `cssEffects` object for filters and transforms
+  - `cssVariables` object for custom properties
+  - `modernCSS` object for container queries, :has(), @layer
+  - Extended `backgroundStrategy` with new types and shapes
+
+- Updated MVP system prompt to include:
+  - All new shape types detection
+  - Advanced CSS detection (mask, aspect-ratio, calc, clip-path)
+  - Animation and transition detection
+
+- Updated Engineering Constraints to prioritize:
+  - CSS-only solutions before SVG
+  - Modern CSS features when appropriate
+  - Performance-optimized animations
+
+### Documentation
+
+- Added comprehensive examples for:
+  - Flower shape with CSS mask
+  - Subtract shape with clip-path
+  - CSS animations
+  - Container query layouts
+  - CSS-only pattern backgrounds
+
+- Updated FAQ with CSS generation questions
+- Updated Glossary with new CSS terms
+- Updated PRD with new functional requirements (FR-009, FR-010, FR-011)
+- Updated ROADMAP with CSS features timeline
+
+---
+
 ## [1.0.0] - 2025-01-15
 
 ### Added
@@ -67,7 +149,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Technical Stack
 
 #### Frontend
-- Next.js 14+ (App Router)
+- Next.js 16+ (App Router with Turbopack)
 - TypeScript
 - Tailwind CSS
 - shadcn/ui components

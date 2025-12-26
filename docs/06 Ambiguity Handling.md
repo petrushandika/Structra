@@ -137,27 +137,5 @@ When AI finds ambiguity, it must be recorded in the following format:
 
 ---
 
-<details>
-<summary><b>📚 Quick Navigation</b></summary>
-
-<table>
-<tr>
-<td>
-
-**Previous:** [Quality Assessment](05%20Quality%20Assessment.md)  
-Quality assessment system and confidence signals
-
-</td>
-<td>
-
-**Next:** [Engineering Constraints](07%20Engineering%20Constraints.md)  
-Constraints, forbidden patterns, design system awareness
-
-</td>
-</tr>
-</table>
-
-</details>
-
 </div>
 

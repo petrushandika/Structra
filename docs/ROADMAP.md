@@ -77,6 +77,29 @@ Current features, planned improvements, and development timeline for Structra.
 - Troubleshooting suggestions
 - Error recovery guides
 
+### Advanced CSS Techniques Support
+
+**Planned**: Q1 2025
+- CSS Mask generation
+- Aspect Ratio support
+- Calc() function usage
+- Clip-path generation
+- CSS Custom Properties
+- Container Queries
+- Modern Selectors (:has(), :is(), :where())
+- CSS Layers (@layer)
+- Backdrop Filter and CSS Filters
+
+### CSS-only Shape Generation
+
+**Planned**: Q1 2025
+- Flower, triangle, starburst, polygon, ribbon shapes
+- Custom corners and borders
+- Section dividers
+- Tooltips and speech bubbles
+- Loaders and spinners
+- CSS-only patterns
+
 ### More Framework Support
 
 **Planned**: March 2025
@@ -193,7 +216,11 @@ Current features, planned improvements, and development timeline for Structra.
    - Expected: Q2 2025
 
 4. **Animation Support** — Generate animations and transitions
-   - Status: Research phase
+   - Status: In Development (Q1 2025)
+   - CSS @keyframes generation
+   - Transition support
+   - Performance-optimized animations
+   - Accessibility (prefers-reduced-motion)
    - Expected: Q3 2025
 
 ### Medium Priority Requests

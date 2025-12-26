@@ -196,10 +196,11 @@ See [07 Engineering Constraints](07%20Engineering%20Constraints.md).
 - Image or design to analyze
 
 **For local development:**
-- Node.js 18+
+- Node.js 20.9+ (required for Next.js 16)
 - Bun 1.0+ (for backend)
 - Docker and Docker Compose
-- PostgreSQL 14+ (or use Docker)
+- PostgreSQL 15+ (or use Docker)
+- Prisma 6+ (ORM for database management)
 
 See [11 Getting Started](11%20Getting%20Started.md) for complete setup guide.
 
@@ -307,6 +308,79 @@ Official SDKs:
 See [10 API Documentation](10%20API%20Documentation.md) for SDK usage.
 
 ---
+
+## 🎨 CSS Generation
+
+### Can Structra generate CSS-only shapes?
+
+Yes! Structra can generate CSS-only shapes using mask, clip-path, and pseudo-elements. The system automatically detects when CSS-only is appropriate vs SVG and generates optimized CSS accordingly.
+
+**Supported CSS-only shapes:**
+- Flower, triangle, starburst, polygon, ribbon
+- Blob, wave, curve, subtract
+- Custom corners and borders
+- Section dividers
+- Tooltips and speech bubbles
+- Loaders and spinners
+
+See [CSS-only Solutions](17%20CSS-only%20Solutions.md) for more details.
+
+### Does Structra support CSS animations?
+
+Yes! Structra can generate CSS animations and transitions including:
+- @keyframes animations
+- CSS transitions
+- Transform animations
+- Hover effects
+- Loading animations
+
+All animations are performance-optimized using GPU-accelerated properties (transform, opacity) and respect `prefers-reduced-motion` for accessibility.
+
+See [CSS Animations & Transitions](16%20CSS%20Animations%20%26%20Transitions.md) for more details.
+
+### What advanced CSS features are supported?
+
+Structra supports a wide range of advanced CSS features:
+
+**Advanced Techniques:**
+- CSS Mask (mask, mask-image, mask-composite)
+- Aspect Ratio (aspect-ratio property)
+- Calc (calc() function)
+- Clip Path (clip-path, polygon, circle, ellipse)
+- CSS Custom Properties (--variables)
+
+**Modern Features:**
+- Container Queries (@container)
+- Modern Selectors (:has(), :is(), :where())
+- CSS Layers (@layer)
+- CSS Nesting
+- Backdrop Filter (backdrop-filter)
+- CSS Filters (filter: blur(), drop-shadow(), etc.)
+
+See [Advanced CSS Techniques](14%20Advanced%20CSS%20Techniques.md) and [Modern CSS Features](18%20Modern%20CSS%20Features.md) for complete documentation.
+
+### Can I generate standalone CSS files?
+
+Yes! Structra can generate standalone CSS files. The system supports:
+- Pure CSS output (no framework dependencies)
+- CSS file generation
+- CSS module generation
+- SCSS/SASS support (planned)
+- PostCSS plugins integration (planned)
+
+The generated CSS is optimized, minified, and includes browser compatibility considerations.
+
+### How does Structra decide between CSS-only and SVG?
+
+Structra uses a decision matrix based on:
+- Shape complexity (simple shapes → CSS-only, complex → SVG)
+- Performance requirements (CSS-only is faster)
+- Browser compatibility needs
+- Animation requirements (path animations → SVG)
+
+The system prioritizes CSS-only solutions when appropriate but falls back to SVG for complex shapes that can't be achieved with CSS.
+
+See [CSS-only Solutions](17%20CSS-only%20Solutions.md) for the complete decision guide.
 
 ## 🐛 Troubleshooting
 

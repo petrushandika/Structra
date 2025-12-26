@@ -389,35 +389,14 @@ Templates are stored in:
 </td>
 <td align="right">
 
-*End of Documentation*
+**[Next: Advanced CSS Techniques →](14%20Advanced%20CSS%20Techniques.md)**  
+*Advanced CSS Techniques*
 
 </td>
 </tr>
 </table>
 
 ---
-
-<details>
-<summary><b>📚 Quick Navigation</b></summary>
-
-<table>
-<tr>
-<td>
-
-**Previous:** [Examples](12%20Examples.md)  
-Usage examples, use cases, and best practices
-
-</td>
-<td>
-
-**Back to:** [Index](README.md)  
-Return to documentation overview
-
-</td>
-</tr>
-</table>
-
-</details>
 
 </div>
 

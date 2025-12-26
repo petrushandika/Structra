@@ -8,10 +8,11 @@ Complete guide to start using Structra, from installation to creating your first
 
 Before starting, ensure you have:
 
-- **Node.js** 18+ or newer
+- **Node.js** 20.9+ or newer (required for Next.js 16)
 - **Bun** 1.0+ (for backend)
 - **Docker** and **Docker Compose** (for local development)
-- **PostgreSQL** 14+ (or use Docker)
+- **PostgreSQL** 15+ (or use Docker)
+- **Prisma** 6+ (ORM for database management)
 - **Git** for version control
 
 ---
@@ -82,11 +83,19 @@ This will start:
 - MinIO (S3-compatible storage)
 - Qdrant (vector database)
 
-5. **Run Database Migrations**
+5. **Setup Prisma and Run Database Migrations**
 
 ```bash
 cd backend
-bun run db:migrate
+
+# Generate Prisma Client
+bunx prisma generate
+
+# Run database migrations
+bunx prisma migrate dev
+
+# (Optional) Seed database
+bunx prisma db seed
 ```
 
 6. **Start Development Servers**
@@ -269,6 +278,25 @@ docker-compose up -d postgres
 
 # Check connection
 psql -h localhost -U user -d structra
+
+# Verify Prisma connection
+cd backend
+bunx prisma db pull
+```
+
+#### 1.1. Prisma Client Not Generated
+
+**Problem:** Prisma Client not found or outdated
+
+**Solution:**
+```bash
+cd backend
+
+# Generate Prisma Client
+bunx prisma generate
+
+# If schema changed, run migrations
+bunx prisma migrate dev
 ```
 
 #### 2. Ollama Not Responding
@@ -377,28 +405,6 @@ After setup is complete:
 </table>
 
 ---
-
-<details>
-<summary><b>📚 Quick Navigation</b></summary>
-
-<table>
-<tr>
-<td>
-
-**Previous:** [API Documentation](10%20API%20Documentation.md)  
-API endpoints, request/response formats, examples
-
-</td>
-<td>
-
-**Next:** [Examples](12%20Examples.md)  
-Usage examples, use cases, and best practices
-
-</td>
-</tr>
-</table>
-
-</details>
 
 </div>
 

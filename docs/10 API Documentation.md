@@ -476,27 +476,5 @@ console.log(result.code);
 
 ---
 
-<details>
-<summary><b>📚 Quick Navigation</b></summary>
-
-<table>
-<tr>
-<td>
-
-**Previous:** [Architecture](09%20Architecture.md)  
-System architecture, components, and data flow
-
-</td>
-<td>
-
-**Next:** [Getting Started](11%20Getting%20Started.md)  
-Installation, setup, and first steps guide
-
-</td>
-</tr>
-</table>
-
-</details>
-
 </div>
 

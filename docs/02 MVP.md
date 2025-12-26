@@ -61,11 +61,24 @@ When receiving input, AI **MUST** perform the following analysis sequentially:
   - Wave
   - Subtract
   - Curve
+  - Flower
+  - Triangle
+  - Starburst
+  - Polygon
+  - Ribbon
+  - Custom corners (scooped, beveled, zig-zag)
+  - Custom borders (wavy, scalloped)
+  - Section dividers
+  - Tooltips/Speech bubbles
+  - Loaders/Spinners
 - Determine best technical approach:
-  - SVG
+  - SVG (for complex shapes)
+  - CSS-only (mask, clip-path, pseudo-elements)
   - CSS Gradient
+  - CSS Pattern
   - Pseudo-element
-  - Background Image
+  - Background Image (last resort)
+- Detect CSS-only solutions when possible
 - Explain the reasoning for approach selection
 
 ### 4. Layer & Hierarchy Mapping
@@ -80,6 +93,33 @@ When receiving input, AI **MUST** perform the following analysis sequentially:
   - Have structure changed
   - Are hidden at certain breakpoints
 - Avoid mere scaling; prioritize restructuring
+- Consider container queries vs media queries
+
+### 6. Advanced CSS Detection
+- Detect usage of advanced CSS techniques:
+  - CSS Mask (mask, mask-image, mask-composite)
+  - Aspect Ratio (aspect-ratio property)
+  - Calc (calc() function)
+  - Clip Path (clip-path, polygon, circle, ellipse)
+  - CSS Custom Properties (--variables)
+  - Container Queries (@container)
+  - Modern Selectors (:has(), :is(), :where())
+  - CSS Layers (@layer)
+  - Backdrop Filter (backdrop-filter)
+  - CSS Filters (filter: blur(), drop-shadow(), etc.)
+- Determine when CSS-only solutions are appropriate vs SVG
+- Document which advanced techniques are used and why
+
+### 7. Animation & Transition Detection
+- Detect animations and transitions in design:
+  - Keyframe animations (@keyframes)
+  - CSS transitions
+  - Transform animations
+  - Hover effects
+  - Loading animations
+- Identify animation properties (duration, timing function, delay)
+- Determine if animation can be CSS-only (no JavaScript)
+- Consider accessibility (prefers-reduced-motion)
 
 ---
 
@@ -89,14 +129,20 @@ AI has access to **UI & CSS Knowledge Base**, which contains:
 - Tailwind utility patterns
 - CSS layout recipes
 - SVG shape templates
+- CSS-only shape recipes (mask, clip-path, pseudo-elements)
+- Advanced CSS patterns (container queries, :has(), @layer)
+- Animation templates (@keyframes, transitions)
+- Modern CSS feature patterns
 - UI component blueprints
 - Industry frontend best practices
 
 AI must:
 - Prioritize maintainable solutions
+- Prefer CSS-only solutions when appropriate
 - Avoid over-complex CSS
 - Use common industry patterns
 - Adapt solutions to design context
+- Consider browser compatibility for advanced features
 
 ---
 
@@ -270,28 +316,6 @@ This prompt aims to build an AI system that is:
 </table>
 
 ---
-
-<details>
-<summary><b>📚 Quick Navigation</b></summary>
-
-<table>
-<tr>
-<td>
-
-**Previous:** [Core Objective](01%20Core%20Objective.md)  
-Core objective and engineering philosophy
-
-</td>
-<td>
-
-**Next:** [Canonical Schema](03%20Canonical%20Schema.md)  
-Single source of truth for all AI processes
-
-</td>
-</tr>
-</table>
-
-</details>
 
 </div>
 

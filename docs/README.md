@@ -31,6 +31,14 @@ This documentation is organized into numbered sections that guide you through un
 12. **[12 Examples](12%20Examples.md)** — Usage examples, use cases, and best practices
 13. **[13 Prompt Templates](13%20Prompt%20Templates.md)** — Prompt templates for role-based reasoning
 
+### CSS Generation
+14. **[14 Advanced CSS Techniques](14%20Advanced%20CSS%20Techniques.md)** — Mask, aspect-ratio, calc, clip-path, custom properties, container queries, modern selectors, layers, filters
+15. **[15 CSS Shapes & Patterns](15%20CSS%20Shapes%20%26%20Patterns.md)** — All shape types (flower, triangle, starburst, polygon, ribbon, etc.) and patterns
+16. **[16 CSS Animations & Transitions](16%20CSS%20Animations%20%26%20Transitions.md)** — @keyframes, animation properties, transitions, performance best practices
+17. **[17 CSS-only Solutions](17%20CSS-only%20Solutions.md)** — When to use CSS-only vs SVG, pure CSS shapes, performance comparison
+18. **[18 Modern CSS Features](18%20Modern%20CSS%20Features.md)** — Container queries, :has(), CSS layers, nesting, viewport units, fluid typography
+19. **[19 CSS Performance & Optimization](19%20CSS%20Performance%20%26%20Optimization.md)** — Optimization techniques, critical CSS, minification, loading strategies
+
 ### Additional Documentation
 - **[PRD](PRD.md)** — Product Requirements Document
 - **[FAQ](FAQ.md)** — Frequently asked questions
@@ -43,17 +51,6 @@ This documentation is organized into numbered sections that guide you through un
 - **[ROADMAP](ROADMAP.md)** — Development roadmap
 - **[GLOSSARY](GLOSSARY.md)** — Technical terms and definitions
 - **[PERFORMANCE](PERFORMANCE.md)** — Performance optimization guide
-
----
-
-## 🚀 Quick Start
-
-New to Structra? Start here:
-
-1. Read **[01 Core Objective](01%20Core%20Objective.md)** to understand the philosophy
-2. Review **[02 MVP](02%20MVP.md)** to learn how the system works
-3. Check **[11 Getting Started](11%20Getting%20Started.md)** for setup instructions
-4. Explore **[12 Examples](12%20Examples.md)** to see real-world usage
 
 ---
 
