@@ -39,6 +39,14 @@ This documentation is organized into numbered sections that guide you through un
 18. **[18 Modern CSS Features](18%20Modern%20CSS%20Features.md)** — Container queries, :has(), CSS layers, nesting, viewport units, fluid typography
 19. **[19 CSS Performance & Optimization](19%20CSS%20Performance%20%26%20Optimization.md)** — Optimization techniques, critical CSS, minification, loading strategies
 
+### Advanced Features
+20. **[20 Code Input & Reverse Engineering](20%20Code%20Input%20%26%20Reverse%20Engineering.md)** — Code input modes, framework detection, parsing, reverse engineering, code refactoring
+21. **[21 Collection & History System](21%20Collection%20%26%20History%20System.md)** — Collection management, history, versioning, copy-paste functionality, export/import
+22. **[22 Visual Editor Guide](22%20Visual%20Editor%20Guide.md)** — Visual editor features, live preview, real-time editing, parameter tuning, drag-and-drop
+23. **[23 Complex Layout Handling](23%20Complex%20Layout%20Handling.md)** — Extreme layouts, multi-layer shapes, nested subtracts, complex cutouts, edge cases
+24. **[24 Framework Support](24%20Framework%20Support.md)** — Comprehensive support for Tailwind, Bootstrap, CSS manual, SCSS, CSS Modules, PostCSS, framework conversion
+25. **[25 Advanced Effects Library](25%20Advanced%20Effects%20Library.md)** — Creative CSS effects, experimental CSS, effect library, custom effects, effect combinations
+
 ### Additional Documentation
 - **[PRD](PRD.md)** — Product Requirements Document
 - **[FAQ](FAQ.md)** — Frequently asked questions

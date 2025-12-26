@@ -7,6 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.0] - 2025-01-20
+
+### Added
+- Code Input & Reverse Engineering - Analyze existing CSS/HTML code from multiple frameworks
+- Collection & History System - Save, organize, and reuse generated CSS patterns
+- Visual Editor - Live preview, real-time editing, parameter tuning, drag-and-drop
+- Complex Layout Handling - Support for extreme layouts, multi-layer shapes, nested subtracts
+- Multi-Framework Support - Comprehensive support for Tailwind, Bootstrap, CSS manual, SCSS, CSS Modules, PostCSS
+- Framework Conversion - Convert code between different frameworks
+- Advanced Effects Library - Creative CSS effects, experimental features, effect templates
+- New API endpoints: `/analyze-code`, `/collections`, `/history`, `/revise`, `/convert-framework`
+- Framework detection from code input
+- Code quality analysis and refactoring suggestions
+- Collection management with tagging and categorization
+- Generation history and revision tracking
+- Copy-paste functionality for quick reuse
+
+### Changed
+- Extended Canonical Schema with new fields: `sourceCode`, `collectionMetadata`, `revisionHistory`, `frameworkDetected`, `codeQuality`
+- Updated Core Objective to include AI CSS Editor concept
+- Extended MVP with Code Input mode and Collection Management
+- Enhanced Architecture with new components: Code Parser, Collection Manager, History Service, Visual Editor Engine, Framework Converter
+
+### Documentation
+- Added 6 new documentation files (20-25) covering advanced features
+- Updated API Documentation with new endpoints
+- Updated Architecture documentation with new components
+- Updated README with Advanced Features section
+
+---
+
 ## [1.1.0] - 2025-01-20
 
 ### Added

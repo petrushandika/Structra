@@ -97,6 +97,8 @@ Structra is an AI system designed to analyze visual designs and generate maintai
 │  │  - Tailwind Recipes          │  │
 │  │  - SVG Strategies            │  │
 │  │  - Past Solutions            │  │
+│  │  - Collections               │  │
+│  │  - History                   │  │
 │  └──────────────────────────────┘  │
 │  ┌──────────────────────────────┐  │
 │  │  Qdrant (Vector DB)           │  │
@@ -111,6 +113,80 @@ Structra is an AI system designed to analyze visual designs and generate maintai
 - Enable similar layout matching
 - Support retrieval-augmented generation
 - Learn from user revisions
+- Manage collections and history
+
+### Code Processing Layer
+
+```
+┌─────────────────────────────────────┐
+│   Code Processing                   │
+├─────────────────────────────────────┤
+│  ┌──────────────────────────────┐  │
+│  │  Code Parser & Analyzer       │  │
+│  │  - Framework Detection        │  │
+│  │  - Code Parsing               │  │
+│  │  - Structure Extraction       │  │
+│  └──────────────────────────────┘  │
+│  ┌──────────────────────────────┐  │
+│  │  Framework Converter          │  │
+│  │  - Framework Conversion       │  │
+│  │  - Code Optimization          │  │
+│  └──────────────────────────────┘  │
+└─────────────────────────────────────┘
+```
+
+**Responsibilities:**
+- Parse and analyze code input
+- Detect frameworks automatically
+- Convert between frameworks
+- Extract structure to Canonical Schema
+
+### Collection & History Layer
+
+```
+┌─────────────────────────────────────┐
+│   Collection & History              │
+├─────────────────────────────────────┤
+│  ┌──────────────────────────────┐  │
+│  │  Collection Manager Service   │  │
+│  │  - Save Collections          │  │
+│  │  - Organize & Search          │  │
+│  │  - Tagging & Categories      │  │
+│  └──────────────────────────────┘  │
+│  ┌──────────────────────────────┐  │
+│  │  History Service              │  │
+│  │  - Generation History         │  │
+│  │  - Revision Tracking          │  │
+│  │  - Version Management         │  │
+│  └──────────────────────────────┘  │
+└─────────────────────────────────────┘
+```
+
+**Responsibilities:**
+- Manage collections of saved CSS
+- Track generation history
+- Handle versioning and revisions
+- Enable copy-paste functionality
+
+### Visual Editor Layer
+
+```
+┌─────────────────────────────────────┐
+│   Visual Editor Engine              │
+├─────────────────────────────────────┤
+│  - Live Preview System              │
+│  - Real-time Editing                │
+│  - Parameter Tuning                 │
+│  - Drag-and-Drop                    │
+│  - Code Synchronization             │
+└─────────────────────────────────────┘
+```
+
+**Responsibilities:**
+- Provide visual editing interface
+- Sync visual edits with code
+- Update Canonical Schema in real-time
+- Generate code from visual changes
 
 ---
 
@@ -118,18 +194,27 @@ Structra is an AI system designed to analyze visual designs and generate maintai
 
 ```mermaid
 flowchart TD
-    A[User Uploads Design] --> B[Image Processing]
-    B --> C[Gemini Vision Analysis]
-    C --> D[Layout Hypothesis]
-    D --> E[Ollama Reasoning]
-    E --> F[Canonical Schema Generation]
-    F --> G{Schema Valid?}
-    G -->|No| H[Error Handling]
-    G -->|Yes| I[Code Generation]
-    I --> J[Quality Assessment]
-    J --> K[Return to User]
-    H --> L[User Feedback]
-    L --> E
+    A[User Input] --> B{Input Type?}
+    B -->|Image| C[Image Processing]
+    B -->|Code| D[Code Parser & Analyzer]
+    C --> E[Gemini Vision Analysis]
+    D --> F[Framework Detection]
+    F --> G[Structure Extraction]
+    E --> H[Layout Hypothesis]
+    G --> H
+    H --> I[Ollama Reasoning]
+    I --> J[Canonical Schema Generation]
+    J --> K{Schema Valid?}
+    K -->|No| L[Error Handling]
+    K -->|Yes| M[Code Generation]
+    M --> N[Quality Assessment]
+    N --> O{Save to Collection?}
+    O -->|Yes| P[Collection Manager]
+    O -->|No| Q[Return to User]
+    P --> R[History Service]
+    R --> Q
+    L --> S[User Feedback]
+    S --> I
 ```
 
 ### Detailed Flow

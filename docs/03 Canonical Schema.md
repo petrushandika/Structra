@@ -144,7 +144,31 @@ Without this schema, output is considered **invalid**.
     "cssNesting": {
       "enabled": false
     }
-  }
+  },
+  
+  "sourceCode": {
+    "original": null,
+    "framework": null,
+    "language": null
+  },
+  
+  "frameworkDetected": null,
+  
+  "codeQuality": {
+    "score": null,
+    "issues": [],
+    "suggestions": []
+  },
+  
+  "collectionMetadata": {
+    "tags": [],
+    "category": null,
+    "usageCount": 0,
+    "createdAt": null,
+    "updatedAt": null
+  },
+  
+  "revisionHistory": []
 }
 ```
 
@@ -253,6 +277,44 @@ Modern CSS features used:
   - `enabled`: Whether CSS layers are used
   - `layers`: Array of layer names
 - `cssNesting`: Whether CSS nesting is used
+
+### `sourceCode` (New)
+Original code if input was code-based:
+- `original`: Original code string (if from code input)
+- `framework`: Framework of original code (tailwind, bootstrap, css-manual, scss, etc.)
+- `language`: Language of original code (css, scss, html, etc.)
+
+### `frameworkDetected` (New)
+Auto-detected framework from code input:
+- `null` if input was not code-based
+- String value: "tailwind", "bootstrap", "css-manual", "scss", "css-modules", "postcss", etc.
+
+### `codeQuality` (New)
+Analysis of input code quality (only present for code input):
+- `score`: Quality score (0-100) or null
+- `issues`: Array of code quality issues found:
+  - `type`: Issue type (magic-number, nested-absolute, deep-dom, inline-style, non-semantic, etc.)
+  - `severity`: "high", "medium", "low"
+  - `description`: Description of the issue
+  - `location`: Where the issue occurs (line number, selector, etc.)
+- `suggestions`: Array of refactoring suggestions
+
+### `collectionMetadata` (New)
+Metadata for collection management:
+- `tags`: Array of tags for searching and categorization
+- `category`: Category name (e.g., "hero-sections", "buttons", "shapes", etc.)
+- `usageCount`: Number of times this CSS has been used/copied
+- `createdAt`: ISO timestamp when added to collection
+- `updatedAt`: ISO timestamp when last updated
+
+### `revisionHistory` (New)
+Array of revision objects tracking changes:
+- Each revision object contains:
+  - `id`: Unique revision ID
+  - `timestamp`: ISO timestamp of revision
+  - `action`: Action type ("created", "edited", "converted", "refactored")
+  - `changes`: Description of changes made
+  - `schemaVersion`: Schema version at time of revision
 
 ---
 

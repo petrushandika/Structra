@@ -108,6 +108,60 @@ Current features, planned improvements, and development timeline for Structra.
 - Angular component templates
 - Framework-specific optimizations
 
+### Code Input & Reverse Engineering
+
+**Status**: ✅ Completed (v1.2.0)
+- Code input from multiple frameworks (Tailwind, Bootstrap, CSS manual, SCSS, CSS Modules, PostCSS)
+- Automatic framework detection
+- Code parsing and structure extraction
+- Reverse engineering to Canonical Schema
+- Code quality analysis and refactoring suggestions
+
+### Collection & History System
+
+**Status**: ✅ Completed (v1.2.0)
+- Save generated CSS to collections
+- Organize with tags and categories
+- Search and filter collections
+- Copy-paste functionality
+- Generation history and revision tracking
+- Export/import collections
+
+### Visual Editor
+
+**Status**: ✅ Completed (v1.2.0)
+- Live preview system
+- Real-time editing
+- Parameter tuning (colors, spacing, shapes)
+- Drag-and-drop layout adjustment
+- Code synchronization
+
+### Multi-Framework Support & Conversion
+
+**Status**: ✅ Completed (v1.2.0)
+- Comprehensive support for Tailwind, Bootstrap, CSS manual, SCSS, CSS Modules, PostCSS
+- Framework conversion between supported frameworks
+- Framework-specific best practices
+- Hybrid framework approaches
+
+### Complex Layout Handling
+
+**Status**: ✅ Completed (v1.2.0)
+- Extreme layout detection and handling
+- Multi-layer complex shapes
+- Nested subtract patterns
+- Complex cutout support
+- Edge case handling
+
+### Advanced Effects Library
+
+**Status**: ✅ Completed (v1.2.0)
+- Creative CSS effects (glassmorphism, neumorphism, etc.)
+- Experimental CSS features support
+- Effect templates and library
+- Custom effect creation
+- Effect combinations
+
 ---
 
 ## 📈 Medium-term Roadmap (Q2 2025)

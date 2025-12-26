@@ -36,6 +36,22 @@ AI must be able to receive and combine the following input types:
 - Design references
 - Abstract shape and flow descriptions
 
+### 4. Code Input (New)
+- Existing CSS/HTML code (Bootstrap, Tailwind, CSS manual, SCSS, CSS Modules, PostCSS)
+- Code snippets or full files
+- Framework-specific code
+- Legacy code that needs refactoring
+- Code that needs conversion between frameworks
+
+**Supported Frameworks:**
+- Tailwind CSS (all versions)
+- Bootstrap (3, 4, 5)
+- CSS Manual (vanilla CSS)
+- SCSS/SASS
+- CSS Modules
+- PostCSS
+- Other CSS frameworks
+
 ---
 
 ## 🔍 Analysis Objectives
@@ -120,6 +136,40 @@ When receiving input, AI **MUST** perform the following analysis sequentially:
 - Identify animation properties (duration, timing function, delay)
 - Determine if animation can be CSS-only (no JavaScript)
 - Consider accessibility (prefers-reduced-motion)
+
+### 8. Code Reverse Engineering (New)
+When receiving code input, AI **MUST**:
+- Detect framework automatically (Tailwind, Bootstrap, CSS manual, SCSS, etc.)
+- Parse code structure and extract:
+  - Layout patterns (grid, flex, positioning)
+  - Component boundaries
+  - Styling strategies
+  - Shape implementations (blobs, waves, subtracts, etc.)
+  - Advanced CSS techniques used
+  - Responsive breakpoints
+- Reverse engineer to Canonical Schema
+- Identify code quality issues:
+  - Magic numbers
+  - Nested absolute positioning
+  - Deep DOM trees
+  - Inline styles
+  - Non-semantic HTML
+- Suggest refactoring opportunities
+- Convert between frameworks if requested
+
+### 9. Collection Management (New)
+AI **MUST** support:
+- Saving generated CSS to collections
+- Organizing collections with tags and categories
+- Searching collections by:
+  - Shape type
+  - Framework
+  - Component type
+  - Tags
+- Copy-paste functionality for quick reuse
+- Versioning and revision history
+- Editing from history
+- Export/import collections
 
 ---
 

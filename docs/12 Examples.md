@@ -713,6 +713,221 @@ If you modify generated code:
 
 ---
 
+## 💻 Example 6: Code Input from Bootstrap
+
+### Input
+
+**Code:**
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Card Title</h5>
+          <p class="card-text">Card content</p>
+          <a href="#" class="btn btn-primary">Button</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+### Analysis Result
+
+**Framework Detected:** Bootstrap 5 (High confidence)
+
+**Code Quality:**
+- Score: 90/100
+- Issues: None
+- Suggestions: Consider using CSS custom properties for colors
+
+### Reverse Engineered Schema
+
+```json
+{
+  "frameworkDetected": "bootstrap",
+  "sections": [
+    {
+      "id": "card-section",
+      "layout": "grid",
+      "description": "Bootstrap card in grid layout"
+    }
+  ],
+  "components": [
+    {
+      "name": "Card",
+      "type": "container",
+      "parentSection": "card-section"
+    }
+  ]
+}
+```
+
+### Converted to Tailwind
+
+```html
+<div class="container mx-auto">
+  <div class="flex flex-wrap">
+    <div class="w-full md:w-1/2">
+      <div class="bg-white rounded-lg shadow-sm p-6">
+        <h5 class="text-xl font-semibold mb-4">Card Title</h5>
+        <p class="text-gray-600 mb-4">Card content</p>
+        <a href="#" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+          Button
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## 📚 Example 7: Collection Management
+
+### Saving to Collection
+
+**Request:**
+```json
+{
+  "name": "Hero Section with Blob",
+  "description": "Hero section with gradient blob background",
+  "tags": ["hero", "blob", "gradient"],
+  "category": "hero-sections",
+  "schema": { ... },
+  "code": "...",
+  "framework": "tailwind"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "id": "coll_123",
+    "name": "Hero Section with Blob",
+    "createdAt": "2025-01-15T10:00:00Z"
+  }
+}
+```
+
+### Searching Collections
+
+**Query:** `tag:blob framework:tailwind category:hero-sections`
+
+**Results:** Returns all hero sections with blob shapes using Tailwind
+
+### Copy-Paste Workflow
+
+1. Find collection item
+2. Copy code
+3. Paste into new project
+4. Modify as needed
+5. Save as new collection item
+
+---
+
+## 🔄 Example 8: Edit from History
+
+### Loading History Item
+
+**Request:** `GET /history/hist_456`
+
+**Response:**
+```json
+{
+  "id": "hist_456",
+  "timestamp": "2025-01-15T10:00:00Z",
+  "inputType": "image",
+  "framework": "tailwind",
+  "schema": { ... },
+  "code": "..."
+}
+```
+
+### Making Revisions
+
+**Request:** `POST /revise`
+
+```json
+{
+  "historyId": "hist_456",
+  "changes": {
+    "schema": {
+      "backgroundStrategy": {
+        "type": "css-mask",
+        "shape": "blob"
+      }
+    },
+    "description": "Updated to use CSS mask instead of SVG"
+  }
+}
+```
+
+**Response:**
+```json
+{
+  "id": "rev_789",
+  "originalId": "hist_456",
+  "timestamp": "2025-01-15T11:00:00Z",
+  "schema": { ... },
+  "code": "..."
+}
+```
+
+---
+
+## 🔀 Example 9: Framework Conversion
+
+### Bootstrap to Tailwind
+
+**Input (Bootstrap):**
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Title</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+**Conversion Request:**
+```json
+{
+  "code": "...",
+  "sourceFramework": "bootstrap",
+  "targetFramework": "tailwind"
+}
+```
+
+**Output (Tailwind):**
+```html
+<div class="container mx-auto">
+  <div class="flex flex-wrap">
+    <div class="w-full md:w-1/2">
+      <div class="bg-white rounded-lg shadow p-6">
+        <h5 class="text-xl font-semibold mb-4">Title</h5>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+**Conversion Summary:**
+- Classes converted: 8
+- Custom CSS added: 2
+- Functionality preserved: ✅
+
+---
+
 <div align="center">
 
 ## 📖 Navigation

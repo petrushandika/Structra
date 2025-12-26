@@ -1,10 +1,10 @@
-# 🎨 Structra — Advanced CSS Techniques
+﻿# ðŸŽ¨ Structra â€” Advanced CSS Techniques
 
-This document covers advanced CSS techniques that Structra can generate, including mask, aspect-ratio, calc, clip-path, custom properties, container queries, modern selectors, CSS layers, and filters.
+This document covers teknik CSS lanjutan yang dapat dihasilkan oleh Structra, termasuk mask, aspect-ratio, calc, clip-path, custom properties, container queries, modern selectors, CSS layers, dan filters.
 
 ---
 
-## 📋 Table of Contents
+## ðŸ“‹ Table of Contents
 
 - [CSS Mask](#css-mask)
 - [Aspect Ratio](#aspect-ratio)
@@ -19,9 +19,9 @@ This document covers advanced CSS techniques that Structra can generate, includi
 
 ---
 
-## 🎭 CSS Mask
+## ðŸŽ­ CSS Mask
 
-CSS Mask allows you to create complex transparency effects and cutouts.
+CSS Mask allows you to membuat efek transparansi kompleks dan cutout.
 
 ### Basic Usage
 
@@ -63,17 +63,17 @@ CSS Mask allows you to create complex transparency effects and cutouts.
 
 ### Use Cases
 
-- Creating flower shapes
-- Complex cutouts
-- Vignette effects
-- Spotlight effects
-- Combining multiple shapes
+- Membuat flower shapes
+- Cutout kompleks
+- Efek vignette
+- Efek spotlight
+- Menggabungkan beberapa bentuk
 
 ---
 
-## 📐 Aspect Ratio
+## ðŸ“ Aspect Ratio
 
-The `aspect-ratio` property maintains consistent proportions.
+Properti `aspect-ratio` maintains consistent proportions yang konsisten.
 
 ### Basic Usage
 
@@ -89,7 +89,7 @@ The `aspect-ratio` property maintains consistent proportions.
 }
 ```
 
-### With Calc
+### Dengan Calc
 
 ```css
 .responsive-box {
@@ -120,16 +120,16 @@ aspect-ratio: 21 / 9;
 
 ### Use Cases
 
-- Maintaining image proportions
-- Responsive containers
-- Card layouts
+- maintains consistent proportions gambar
+- Container responsif
+- Layout card
 - Video embeds
 
 ---
 
-## 🧮 Calc Function
+## ðŸ§® Calc Function
 
-The `calc()` function performs calculations in CSS.
+Function `calc()` performs calculations dalam CSS.
 
 ### Basic Usage
 
@@ -168,16 +168,16 @@ The `calc()` function performs calculations in CSS.
 
 ### Use Cases
 
-- Responsive spacing
-- Centering with known dimensions
+- Spacing responsif
+- Centering dengan dimensi yang diketahui
 - Grid gaps
 - Fluid typography
 
 ---
 
-## ✂️ Clip Path
+## âœ‚ï¸ Clip Path
 
-Clip-path creates geometric cutouts and shapes.
+Clip-path creates geometric cutouts geometris dan bentuk.
 
 ### Basic Shapes
 
@@ -235,16 +235,16 @@ Clip-path creates geometric cutouts and shapes.
 
 ### Use Cases
 
-- Geometric shapes
-- Notches and cutouts
-- Decorative elements
+- Bentuk geometris
+- Notches dan cutouts
+- Elemen dekoratif
 - Image cropping
 
 ---
 
-## 🎨 CSS Custom Properties
+## ðŸŽ¨ CSS Custom Properties
 
-CSS Custom Properties (CSS Variables) enable dynamic theming and reusable values.
+CSS Custom Properties (CSS Variables) enables dynamic theming dinamis dan nilai yang dapat digunakan kembali.
 
 ### Basic Usage
 
@@ -304,11 +304,11 @@ CSS Custom Properties (CSS Variables) enable dynamic theming and reusable values
 
 ---
 
-## 📦 Container Queries
+## ðŸ“¦ Container Queries
 
-Container queries allow styling based on container size, not viewport.
+Container queries allows styling berdasarkan ukuran container, bukan viewport.
 
-### Basic Setup
+### Setup Dasar
 
 ```css
 .container {
@@ -358,21 +358,21 @@ Container queries allow styling based on container size, not viewport.
 
 ### Use Cases
 
-- Component-level responsiveness
-- Card layouts
-- Sidebar components
-- Modular design systems
+- Responsivitas tingkat komponen
+- Layout card
+- Komponen sidebar
+- Sistem desain modular
 
 ---
 
-## 🔍 Modern Selectors
+## ðŸ” Modern Selectors
 
-Modern CSS selectors provide powerful selection capabilities.
+Modern CSS selectors provides powerful seleksi yang kuat.
 
 ### :has() Selector
 
 ```css
-/* Select parent based on child */
+/* Select parent berdasarkan child */
 .card:has(.badge) {
   border: 2px solid gold;
 }
@@ -424,9 +424,9 @@ Modern CSS selectors provide powerful selection capabilities.
 
 ---
 
-## 📚 CSS Layers
+## ðŸ“š CSS Layers
 
-CSS Layers (@layer) provide cascade control and organization.
+CSS Layers (@layer) provides control cascade dan organisasi.
 
 ### Basic Usage
 
@@ -475,9 +475,9 @@ CSS Layers (@layer) provide cascade control and organization.
 
 ---
 
-## 🌫️ Backdrop Filter
+## ðŸŒ«ï¸ Backdrop Filter
 
-Backdrop-filter applies filters to content behind an element.
+Backdrop-filter applies filters ke konten di belakang elemen.
 
 ### Basic Usage
 
@@ -499,22 +499,22 @@ Backdrop-filter applies filters to content behind an element.
 
 ### Performance Note
 
-⚠️ **Warning**: Backdrop-filter is expensive. Use sparingly and test performance.
+âš ï¸ **Warning**: Backdrop-filter expensive. Use sparingly dan uji performa.
 
 ### Use Cases
 
-- Glassmorphism effects
+- Efek glassmorphism
 - Frosted glass
 - Modal overlays
 - Navigation bars
 
 ---
 
-## 🎭 CSS Filters
+## ðŸŽ­ CSS Filters
 
-CSS Filters apply visual effects to elements.
+CSS Filters menerapkan efek visual ke elemen.
 
-### Available Filters
+### Filter yang Tersedia
 
 ```css
 /* Blur */
@@ -573,16 +573,16 @@ CSS Filters apply visual effects to elements.
 
 ### Use Cases
 
-- Image effects
+- Efek gambar
 - Hover states
 - Loading states
 - Theming
 
 ---
 
-## 🔗 Combining Techniques
+## ðŸ”— Combining Techniques
 
-### Example: Flower Shape with Mask
+### Example: Flower Shape dengan Mask
 
 ```css
 .flower {
@@ -597,7 +597,7 @@ CSS Filters apply visual effects to elements.
 }
 ```
 
-### Example: Responsive Container with Calc
+### Example: Responsive Container dengan Calc
 
 ```css
 :root {
@@ -622,28 +622,28 @@ CSS Filters apply visual effects to elements.
 
 ---
 
-## 📖 Browser Support
+## ðŸ“– Browser Support
 
-### Modern Features Support
+### Modern Feature Support
 
-| Feature | Chrome | Firefox | Safari | Edge |
-|---------|--------|---------|--------|------|
-| CSS Mask | ✅ | ✅ | ✅ | ✅ |
-| Aspect Ratio | ✅ | ✅ | ✅ | ✅ |
-| Calc | ✅ | ✅ | ✅ | ✅ |
-| Clip Path | ✅ | ✅ | ✅ | ✅ |
-| Custom Properties | ✅ | ✅ | ✅ | ✅ |
-| Container Queries | ✅ | ✅ | ✅ | ✅ |
-| :has() | ✅ | ✅ | ✅ | ✅ |
-| CSS Layers | ✅ | ✅ | ✅ | ✅ |
-| Backdrop Filter | ✅ | ✅ | ✅ | ✅ |
+| Fitur | Chrome | Firefox | Safari | Edge |
+|-------|--------|---------|--------|------|
+| CSS Mask | âœ… | âœ… | âœ… | âœ… |
+| Aspect Ratio | âœ… | âœ… | âœ… | âœ… |
+| Calc | âœ… | âœ… | âœ… | âœ… |
+| Clip Path | âœ… | âœ… | âœ… | âœ… |
+| Custom Properties | âœ… | âœ… | âœ… | âœ… |
+| Container Queries | âœ… | âœ… | âœ… | âœ… |
+| :has() | âœ… | âœ… | âœ… | âœ… |
+| CSS Layers | âœ… | âœ… | âœ… | âœ… |
+| Backdrop Filter | âœ… | âœ… | âœ… | âœ… |
 
-### Fallback Strategies
+### Fallback Strategy
 
-Always provide fallbacks for unsupported features:
+Always provide fallback for unsupported features:
 
 ```css
-/* With @supports */
+/* Dengan @supports */
 @supports (aspect-ratio: 1 / 1) {
   .responsive {
     aspect-ratio: 16 / 9;
@@ -661,26 +661,26 @@ Always provide fallbacks for unsupported features:
 
 <div align="center">
 
-## 📖 Navigation
+## ðŸ“– Navigation
 
 <table>
 <tr>
 <td align="left">
 
-**[← Previous: Prompt Templates](13%20Prompt%20Templates.md)**  
+**[â† Previous: Prompt Templates](13%20Prompt%20Templates.md)**  
 *Prompt Templates for Role-Based Reasoning*
 
 </td>
 <td align="center">
 
-**[↑ Index](README.md)**  
+**[â†‘ Index](README.md)**  
 *Documentation Overview*
 
 </td>
 <td align="right">
 
-**[Next: CSS Shapes & Patterns →](15%20CSS%20Shapes%20%26%20Patterns.md)**  
-*All Shape Types and Patterns*
+**[Next: CSS Shapes & Patterns â†’](15%20CSS%20Shapes%20%26%20Patterns.md)**  
+*All Shape Types dan Patterns*
 
 </td>
 </tr>

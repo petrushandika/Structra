@@ -560,6 +560,131 @@ System must generate CSS animations and transitions including @keyframes, animat
 - ✅ Performance optimized
 - ✅ GPU-accelerated properties used
 
+#### FR-012: Code Input & Reverse Engineering
+
+**Priority:** P1 (High)
+
+**Description:**
+System must support code input from multiple frameworks, automatically detect frameworks, parse code structure, and reverse engineer to Canonical Schema.
+
+**Requirements:**
+- Accept code input from Tailwind, Bootstrap, CSS manual, SCSS, CSS Modules, PostCSS
+- Automatically detect framework from code
+- Parse code structure and extract layout patterns
+- Reverse engineer to Canonical Schema
+- Analyze code quality and provide suggestions
+- Support code refactoring
+
+**Acceptance Criteria:**
+- ✅ Framework detection accuracy > 90%
+- ✅ Code parsing successful for all supported frameworks
+- ✅ Schema generation from code input
+- ✅ Quality analysis provided
+
+#### FR-013: Collection Management System
+
+**Priority:** P1 (High)
+
+**Description:**
+System must provide collection management for saving, organizing, searching, and reusing generated CSS patterns.
+
+**Requirements:**
+- Save generated CSS to collections
+- Organize with tags and categories
+- Search by tags, category, framework, component type
+- Copy-paste functionality
+- Export/import collections
+- Collection sharing
+
+**Acceptance Criteria:**
+- ✅ Collections can be created and managed
+- ✅ Search and filter functionality works
+- ✅ Copy-paste works correctly
+- ✅ Export/import successful
+
+#### FR-014: Visual Editor
+
+**Priority:** P2 (Medium)
+
+**Description:**
+System must provide visual editor with live preview, real-time editing, parameter tuning, and drag-and-drop functionality.
+
+**Requirements:**
+- Live preview system
+- Real-time code synchronization
+- Parameter tuning (colors, spacing, shapes)
+- Drag-and-drop layout adjustment
+- Visual feedback system
+- Responsive preview modes
+
+**Acceptance Criteria:**
+- ✅ Live preview updates instantly
+- ✅ Visual edits sync with code
+- ✅ Parameter tuning works smoothly
+- ✅ Drag-and-drop functional
+
+#### FR-015: Multi-Framework Support
+
+**Priority:** P1 (High)
+
+**Description:**
+System must support comprehensive framework support including Tailwind, Bootstrap, CSS manual, SCSS, CSS Modules, and PostCSS with framework conversion capabilities.
+
+**Requirements:**
+- Generate code for all supported frameworks
+- Framework-specific best practices
+- Framework conversion between supported frameworks
+- Framework detection from code
+- Hybrid framework support
+
+**Acceptance Criteria:**
+- ✅ All frameworks supported
+- ✅ Conversion preserves functionality
+- ✅ Framework-specific patterns applied
+- ✅ Hybrid approaches work
+
+#### FR-016: Complex Layout Handling
+
+**Priority:** P2 (Medium)
+
+**Description:**
+System must handle extreme layouts, multi-layer complex shapes, nested subtracts, and edge cases in design analysis.
+
+**Requirements:**
+- Detect and handle unconventional layouts
+- Support multi-layer shapes
+- Handle nested subtract patterns
+- Manage complex cutouts
+- Provide warnings for extreme complexity
+- Fallback strategies for unsupported features
+
+**Acceptance Criteria:**
+- ✅ Complex layouts analyzed correctly
+- ✅ Multi-layer shapes supported
+- ✅ Nested subtracts handled
+- ✅ Warnings provided when needed
+
+#### FR-017: Advanced Effects Library
+
+**Priority:** P3 (Low)
+
+**Description:**
+System must provide advanced CSS effects library with creative effects, experimental CSS features, and custom effect creation.
+
+**Requirements:**
+- Creative CSS effects (glassmorphism, neumorphism, etc.)
+- Experimental CSS features support
+- Effect templates and library
+- Custom effect creation
+- Effect combinations
+- Performance optimization
+
+**Acceptance Criteria:**
+- ✅ Effect library available
+- ✅ Effects work correctly
+- ✅ Performance optimized
+- ✅ Custom effects can be created
+
 ### Non-Functional Requirements
 
 #### NFR-001: Performance

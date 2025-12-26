@@ -272,6 +272,42 @@ Areas of uncertainty in design analysis that are documented with:
 
 **Related**: [06 Ambiguity Handling](06%20Ambiguity%20Handling.md)
 
+### Code Input
+
+The ability to input existing CSS/HTML code for analysis and reverse engineering. Structra supports code input from multiple frameworks including Tailwind, Bootstrap, CSS manual, SCSS, CSS Modules, and PostCSS.
+
+**Related**: [20 Code Input & Reverse Engineering](20%20Code%20Input%20%26%20Reverse%20Engineering.md)
+
+### Reverse Engineering
+
+The process of analyzing existing code and extracting its structure to the Canonical Schema. This enables understanding, refactoring, and converting code between frameworks.
+
+**Related**: [20 Code Input & Reverse Engineering](20%20Code%20Input%20%26%20Reverse%20Engineering.md)
+
+### Collection
+
+A saved CSS pattern that can be organized, searched, and reused. Collections include metadata such as tags, categories, usage count, and revision history.
+
+**Related**: [21 Collection & History System](21%20Collection%20%26%20History%20System.md)
+
+### History
+
+A record of all CSS generations, including timestamps, input types, frameworks used, and generated schemas. History enables revisiting and editing previous generations.
+
+**Related**: [21 Collection & History System](21%20Collection%20%26%20History%20System.md)
+
+### Visual Editor
+
+An interactive interface that provides live preview, real-time editing, parameter tuning, and drag-and-drop functionality for modifying CSS visually.
+
+**Related**: [22 Visual Editor Guide](22%20Visual%20Editor%20Guide.md)
+
+### Framework Conversion
+
+The process of converting code from one CSS framework to another while preserving functionality. Supported conversions include Bootstrap ↔ Tailwind, CSS Manual ↔ SCSS, and more.
+
+**Related**: [24 Framework Support](24%20Framework%20Support.md)
+
 ---
 
 ## 🔤 Acronyms & Abbreviations

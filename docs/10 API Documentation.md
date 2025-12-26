@@ -263,6 +263,317 @@ Get list of all projects.
 
 ---
 
+### 6. Analyze Code
+
+> **Status:** 📅 Planned for v1.1 (Q2 2025)
+
+Analyze existing CSS/HTML code and reverse engineer to Canonical Schema.
+
+**Endpoint:** `POST /analyze-code`
+
+**Request Body:**
+```json
+{
+  "code": "<div class=\"flex p-6\">...</div>",
+  "framework": "tailwind",
+  "options": {
+    "includeQualityAnalysis": true,
+    "includeSuggestions": true
+  }
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "id": "analysis_789",
+    "frameworkDetected": "tailwind",
+    "confidence": "high",
+    "schema": { ... },
+    "codeQuality": {
+      "score": 85,
+      "issues": [...],
+      "suggestions": [...]
+    }
+  }
+}
+```
+
+---
+
+### 7. List Collections
+
+> **Status:** 📅 Planned for v1.1 (Q2 2025)
+
+Get list of all collection items.
+
+**Endpoint:** `GET /collections`
+
+**Query Parameters:**
+- `page` (optional): Page number (default: 1)
+- `limit` (optional): Items per page (default: 20)
+- `tags` (optional): Filter by tags (comma-separated)
+- `category` (optional): Filter by category
+- `framework` (optional): Filter by framework
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "collections": [...],
+    "pagination": {
+      "page": 1,
+      "limit": 20,
+      "total": 45,
+      "totalPages": 3
+    }
+  }
+}
+```
+
+---
+
+### 8. Save to Collection
+
+> **Status:** 📅 Planned for v1.1 (Q2 2025)
+
+Save generated CSS to a collection.
+
+**Endpoint:** `POST /collections`
+
+**Request Body:**
+```json
+{
+  "name": "Hero Section with Blob",
+  "description": "Hero section with gradient blob background",
+  "tags": ["hero", "blob", "gradient"],
+  "category": "hero-sections",
+  "schema": { ... },
+  "code": "...",
+  "framework": "tailwind"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "id": "coll_123",
+    "name": "Hero Section with Blob",
+    "createdAt": "2025-01-15T10:00:00Z"
+  }
+}
+```
+
+---
+
+### 9. Get Collection Item
+
+> **Status:** 📅 Planned for v1.1 (Q2 2025)
+
+Retrieve a specific collection item.
+
+**Endpoint:** `GET /collections/:id`
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "id": "coll_123",
+    "name": "Hero Section with Blob",
+    "description": "...",
+    "tags": ["hero", "blob"],
+    "category": "hero-sections",
+    "schema": { ... },
+    "code": "...",
+    "framework": "tailwind",
+    "usageCount": 5,
+    "createdAt": "2025-01-15T10:00:00Z",
+    "updatedAt": "2025-01-15T11:30:00Z"
+  }
+}
+```
+
+---
+
+### 10. Update Collection Item
+
+> **Status:** 📅 Planned for v1.1 (Q2 2025)
+
+Update a collection item.
+
+**Endpoint:** `PUT /collections/:id`
+
+**Request Body:**
+```json
+{
+  "name": "Updated Hero Section",
+  "tags": ["hero", "blob", "updated"],
+  "schema": { ... }
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "id": "coll_123",
+    "updatedAt": "2025-01-15T12:00:00Z"
+  }
+}
+```
+
+---
+
+### 11. Delete Collection Item
+
+> **Status:** 📅 Planned for v1.1 (Q2 2025)
+
+Delete a collection item.
+
+**Endpoint:** `DELETE /collections/:id`
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "Collection item deleted"
+}
+```
+
+---
+
+### 12. Get Generation History
+
+Retrieve generation history.
+
+**Endpoint:** `GET /history`
+
+**Query Parameters:**
+- `page` (optional): Page number (default: 1)
+- `limit` (optional): Items per page (default: 20)
+- `sort` (optional): Sort by `createdAt` or `updatedAt` (default: `createdAt`)
+- `order` (optional): `asc` or `desc` (default: `desc`)
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "history": [...],
+    "pagination": {
+      "page": 1,
+      "limit": 20,
+      "total": 100,
+      "totalPages": 5
+    }
+  }
+}
+```
+
+---
+
+### 13. Get History Item
+
+Retrieve a specific history item.
+
+**Endpoint:** `GET /history/:id`
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "id": "hist_456",
+    "timestamp": "2025-01-15T10:00:00Z",
+    "inputType": "image",
+    "framework": "tailwind",
+    "schema": { ... },
+    "code": "...",
+    "preview": "base64_image"
+  }
+}
+```
+
+---
+
+### 14. Revise from History
+
+Create a revision from a history item.
+
+**Endpoint:** `POST /revise`
+
+**Request Body:**
+```json
+{
+  "historyId": "hist_456",
+  "changes": {
+    "schema": { ... },
+    "description": "Updated colors and spacing"
+  }
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "id": "rev_789",
+    "originalId": "hist_456",
+    "timestamp": "2025-01-15T11:00:00Z",
+    "schema": { ... },
+    "code": "..."
+  }
+}
+```
+
+---
+
+### 15. Convert Framework
+
+Convert code between frameworks.
+
+**Endpoint:** `POST /convert-framework`
+
+**Request Body:**
+```json
+{
+  "code": "<div class=\"container\">...</div>",
+  "sourceFramework": "bootstrap",
+  "targetFramework": "tailwind",
+  "options": {
+    "preserveStructure": true,
+    "optimizeOutput": true
+  }
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "originalCode": "...",
+    "convertedCode": "...",
+    "sourceFramework": "bootstrap",
+    "targetFramework": "tailwind",
+    "changes": {
+      "classesConverted": 15,
+      "customCSSAdded": 2
+    }
+  }
+}
+```
+
+---
+
 ## 🔴 Error Codes
 
 ### Client Errors (4xx)
