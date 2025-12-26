@@ -1,0 +1,105 @@
+// Prisma Schema for Structra
+// This is your Prisma schema file
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User Model
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String?  // Nullable for OAuth users
+  role      UserRole @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  projects    Project[]
+  apiKeys     ApiKey[]
+  collections Collection[]
+
+  @@map("users")
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+// Project Model
+model Project {
+  id        String   @id @default(cuid())
+  name      String
+  userId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  analyses  Analysis[]
+
+  @@map("projects")
+}
+
+// Analysis Model
+model Analysis {
+  id            String   @id @default(cuid())
+  projectId     String
+  inputType     String[] // ["image", "text", "code"]
+  frameworkTarget String[] // ["tailwind", "react"]
+  schema        Json     // Canonical Schema
+  code          Json?    // Generated code
+  qualityAssessment Json? // Quality assessment
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@map("analyses")
+}
+
+// API Key Model
+model ApiKey {
+  id        String   @id @default(cuid())
+  userId    String
+  keyHash   String   @unique
+  name      String
+  lastUsed  DateTime?
+  expiresAt DateTime?
+  createdAt DateTime @default(now())
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("api_keys")
+}
+
+// Collection Model
+model Collection {
+  id          String   @id @default(cuid())
+  userId      String
+  name        String
+  description String?
+  tags        String[]
+  category    String?
+  schema      Json     // Canonical Schema
+  code        String   // Generated CSS/Code
+  framework   String   // "tailwind", "bootstrap", etc.
+  usageCount  Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("collections")
+}
+

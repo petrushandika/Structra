@@ -54,9 +54,10 @@ By participating in this project, you agree to:
 1. **Fork the repository**
 2. **Create a feature branch**: `git checkout -b feature/your-feature-name`
 3. **Make your changes**
-4. **Write tests** for new features
-5. **Update documentation** if needed
-6. **Submit a pull request**
+4. **Code will be auto-formatted** on commit (Prettier + Husky)
+5. **Write tests** for new features
+6. **Update documentation** if needed
+7. **Submit a pull request**
 
 ---
 
@@ -128,6 +129,33 @@ See [11 Getting Started](11%20Getting%20Started.md) for detailed setup instructi
 ---
 
 ## 📝 Code Style Guidelines
+
+### Code Formatting
+
+We use **Prettier** for automatic code formatting and **Husky** for pre-commit hooks.
+
+**Setup:**
+```bash
+# Install dependencies
+npm install
+
+# Setup Husky
+npm run prepare
+```
+
+**Pre-commit hooks automatically:**
+- Format code with Prettier
+- Type check with `tsc --noEmit`
+- Block commit if there are type errors
+
+**Manual formatting:**
+```bash
+# Format all code
+npm run format
+
+# Check formatting
+npm run format:check
+```
 
 ### TypeScript/JavaScript
 
