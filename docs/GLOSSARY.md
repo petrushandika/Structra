@@ -1,0 +1,343 @@
+# 📖 Structra — Glossary
+
+Technical terms, definitions, and key concepts used throughout Structra documentation.
+
+---
+
+## 📋 Table of Contents
+
+- [Core Concepts](#core-concepts)
+- [AI & Machine Learning](#ai--machine-learning)
+- [Technical Terms](#technical-terms)
+- [Acronyms & Abbreviations](#acronyms--abbreviations)
+
+---
+
+## 🎯 Core Concepts
+
+### Canonical Schema
+
+A structured JSON representation that serves as the **single source of truth** for all AI processes in Structra. It includes sections, components, layout strategies, responsive rules, assumptions, and ambiguities.
+
+**Related**: [03 Canonical Schema](03%20Canonical%20Schema.md)
+
+### Role-Based Reasoning
+
+An internal AI reasoning system that uses three distinct roles working sequentially:
+- **Analyzer** — Observes and identifies design elements
+- **Layout Engineer** — Makes structural decisions
+- **Code Generator** — Implements code from schema
+
+**Related**: [04 AI Roles](04%20AI%20Roles.md)
+
+### Quality Assessment
+
+A mandatory evaluation system that provides confidence levels and risk assessments for all non-trivial outputs, including:
+- Visual Confidence
+- Structural Confidence
+- Responsive Risk
+- Maintainability Risk
+- Manual Adjustment Needed
+
+**Related**: [05 Quality Assessment](05%20Quality%20Assessment.md)
+
+### Ambiguity Handling
+
+The process of detecting, documenting, and resolving uncertainties in design analysis. All ambiguities and assumptions must be explicitly recorded in the canonical schema.
+
+**Related**: [06 Ambiguity Handling](06%20Ambiguity%20Handling.md)
+
+### Engineering Constraints
+
+Rules and guidelines that ensure generated code follows best practices:
+- Simplicity First Principle
+- Forbidden Patterns (magic numbers, deep nesting, etc.)
+- Design System Awareness
+- Code Quality Rules
+
+**Related**: [07 Engineering Constraints](07%20Engineering%20Constraints.md)
+
+---
+
+## 🤖 AI & Machine Learning
+
+### Analyzer Role
+
+The first role in Structra's reasoning chain. Responsible for:
+- Understanding visual design and textual input
+- Identifying sections, hierarchy, and visual intent
+- Assessing visual complexity
+- **Does not** generate code or make final styling decisions
+
+**Related**: [04 AI Roles](04%20AI%20Roles.md)
+
+### Layout Engineer Role
+
+The second role in Structra's reasoning chain. Responsible for:
+- Making layout and structural decisions
+- Determining CSS and responsive behavior strategy
+- Creating the final canonical schema
+- Prioritizing maintainability
+
+**Related**: [04 AI Roles](04%20AI%20Roles.md)
+
+### Code Generator Role
+
+The third role in Structra's reasoning chain. Responsible for:
+- Generating code from canonical schema
+- Maintaining semantics and readability
+- Ensuring code matches specification
+- **Does not** modify schema structure
+
+**Related**: [04 AI Roles](04%20AI%20Roles.md)
+
+### Gemini API
+
+Google's cloud-based LLM (Large Language Model) used by Structra for:
+- Visual design analysis
+- Layout interpretation
+- Textual reasoning
+- Image understanding
+
+**Related**: [08 Tech Stack](08%20Tech%20Stack.md)
+
+### Ollama
+
+A local LLM runtime used by Structra for:
+- Layout reasoning refinement
+- Code generation
+- Cost-efficient iteration
+- Prompt experimentation
+
+**Related**: [08 Tech Stack](08%20Tech%20Stack.md)
+
+### RAG (Retrieval-Augmented Generation)
+
+A technique used by Structra to enhance AI responses by:
+- Searching similar layouts from knowledge base
+- Using proven patterns
+- Continuously learning from user revisions
+
+**Related**: [09 Architecture](09%20Architecture.md)
+
+---
+
+## 💻 Technical Terms
+
+### Framework Target
+
+The target framework for code generation. Currently supported:
+- `tailwind` — Tailwind CSS utility classes
+- `react` — React components
+- `nextjs` — Next.js components
+- `html` — Semantic HTML + CSS
+
+**Related**: [10 API Documentation](10%20API%20Documentation.md)
+
+### Design System
+
+A collection of reusable components, design tokens, and guidelines that ensure consistency. Structra can integrate with design systems to:
+- Use color tokens
+- Follow spacing scales
+- Use existing components
+- Maintain consistency
+
+**Related**: [07 Engineering Constraints](07%20Engineering%20Constraints.md)
+
+### Responsive Rules
+
+Rules defined in the canonical schema that specify how layouts adapt at different breakpoints:
+- `mobile` — Mobile devices (< 768px)
+- `tablet` — Tablet devices (768px - 1024px)
+- `desktop` — Desktop devices (> 1024px)
+
+Actions: `restructure`, `simplify`, `hide`
+
+**Related**: [03 Canonical Schema](03%20Canonical%20Schema.md)
+
+### Layout Strategy
+
+The approach chosen for organizing content:
+- `grid` — CSS Grid layout
+- `flex` — Flexbox layout
+- `hybrid` — Combination of grid and flex
+
+**Related**: [03 Canonical Schema](03%20Canonical%20Schema.md)
+
+### Background Strategy
+
+The approach for handling abstract shapes and backgrounds:
+- `svg` — SVG shapes (for complex organic shapes)
+- `css-gradient` — CSS gradients (for simple gradients)
+- `pseudo-element` — CSS pseudo-elements (for decorative effects)
+- `background-image` — Background images (last resort)
+
+**Related**: [03 Canonical Schema](03%20Canonical%20Schema.md)
+
+### Z-Index Strategy
+
+The approach for managing element layering:
+- `minimal` — Minimal z-index usage (preferred)
+- `moderate` — Moderate z-index usage
+- `complex` — Complex z-index usage (avoided)
+
+**Related**: [03 Canonical Schema](03%20Canonical%20Schema.md)
+
+### Assumptions
+
+Explicitly documented assumptions made by AI during analysis. All assumptions must be recorded in the canonical schema and can be modified by users.
+
+**Related**: [06 Ambiguity Handling](06%20Ambiguity%20Handling.md)
+
+### Ambiguities
+
+Areas of uncertainty in design analysis that are documented with:
+- `area` — Design area with ambiguity
+- `issue` — Description of problem
+- `alternatives` — Alternative solutions considered
+- `chosen` — Solution chosen
+- `reason` — Reasoning for choice
+
+**Related**: [06 Ambiguity Handling](06%20Ambiguity%20Handling.md)
+
+---
+
+## 🔤 Acronyms & Abbreviations
+
+### API
+**Application Programming Interface** — The RESTful API provided by Structra for programmatic access.
+
+**Related**: [10 API Documentation](10%20API%20Documentation.md)
+
+### SDK
+**Software Development Kit** — Libraries provided by Structra for easier integration:
+- `@structra/sdk` — JavaScript/TypeScript SDK
+- `structra-python` — Python SDK
+
+**Related**: [10 API Documentation](10%20API%20Documentation.md)
+
+### LLM
+**Large Language Model** — AI models used for natural language processing and code generation:
+- Gemini (Cloud LLM)
+- Ollama (Local LLM)
+
+**Related**: [08 Tech Stack](08%20Tech%20Stack.md)
+
+### RAG
+**Retrieval-Augmented Generation** — Technique for enhancing AI responses with knowledge base retrieval.
+
+**Related**: [09 Architecture](09%20Architecture.md)
+
+### ORM
+**Object-Relational Mapping** — Prisma ORM used for database interactions.
+
+**Related**: [08 Tech Stack](08%20Tech%20Stack.md)
+
+### S3
+**Simple Storage Service** — S3-compatible storage for design images (MinIO, Cloudflare R2, AWS S3).
+
+**Related**: [08 Tech Stack](08%20Tech%20Stack.md)
+
+### CI/CD
+**Continuous Integration/Continuous Deployment** — Automated testing and deployment pipelines.
+
+**Related**: [INTEGRATION.md](INTEGRATION.md)
+
+### JWT
+**JSON Web Token** — Token-based authentication mechanism.
+
+**Related**: [SECURITY.md](SECURITY.md)
+
+### CORS
+**Cross-Origin Resource Sharing** — Mechanism for allowing cross-origin requests.
+
+**Related**: [10 API Documentation](10%20API%20Documentation.md)
+
+### REST
+**Representational State Transfer** — Architectural style for web services (Structra uses RESTful API).
+
+**Related**: [10 API Documentation](10%20API%20Documentation.md)
+
+### WCAG
+**Web Content Accessibility Guidelines** — Standards for web accessibility (future feature).
+
+**Related**: [ROADMAP.md](ROADMAP.md)
+
+---
+
+## 📚 Related Documentation
+
+- **[Core Objective](01%20Core%20Objective.md)** — Core concepts
+- **[Canonical Schema](03%20Canonical%20Schema.md)** — Schema structure
+- **[AI Roles](04%20AI%20Roles.md)** — Role-based reasoning
+- **[Architecture](09%20Architecture.md)** — System architecture
+
+---
+
+<div align="center">
+
+## 📖 Navigation
+
+<table>
+<tr>
+<td align="left">
+
+**[← Previous: Roadmap](ROADMAP.md)**  
+*Development Roadmap*
+
+</td>
+<td align="center">
+
+**[↑ Index](README.md)**  
+*Documentation Overview*
+
+</td>
+<td align="right">
+
+**[Next: Performance →](PERFORMANCE.md)**  
+*Performance Optimization Guide*
+
+</td>
+</tr>
+</table>
+
+---
+
+<details>
+<summary><b>📚 Related Documentation</b></summary>
+
+<table>
+<tr>
+<td>
+
+**[Core Objective](01%20Core%20Objective.md)**  
+Core concepts and philosophy
+
+</td>
+<td>
+
+**[Canonical Schema](03%20Canonical%20Schema.md)**  
+Schema structure and fields
+
+</td>
+</tr>
+<tr>
+<td>
+
+**[AI Roles](04%20AI%20Roles.md)**  
+Role-based reasoning system
+
+</td>
+<td>
+
+**[Architecture](09%20Architecture.md)**  
+System architecture overview
+
+</td>
+</tr>
+</table>
+
+</details>
+
+</div>
+
