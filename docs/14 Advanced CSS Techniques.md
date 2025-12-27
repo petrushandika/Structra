@@ -54,7 +54,7 @@ CSS Mask allows you to membuat efek transparansi kompleks dan cutout.
 
 ```css
 .composite-mask {
-  mask-image: 
+  mask-image:
     radial-gradient(circle at 30% 30%, black 20%, transparent 20%),
     radial-gradient(circle at 70% 30%, black 20%, transparent 20%);
   mask-composite: intersect;
@@ -213,7 +213,18 @@ Clip-path creates geometric cutouts geometris dan bentuk.
 
 /* Star */
 .star {
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
 }
 ```
 
@@ -221,15 +232,7 @@ Clip-path creates geometric cutouts geometris dan bentuk.
 
 ```css
 .custom-shape {
-  clip-path: polygon(
-    0% 20%,
-    60% 20%,
-    60% 0%,
-    100% 50%,
-    60% 100%,
-    60% 80%,
-    0% 80%
-  );
+  clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
 }
 ```
 
@@ -434,15 +437,21 @@ CSS Layers (@layer) provides control cascade dan organisasi.
 @layer base, components, utilities;
 
 @layer base {
-  h1 { font-size: 2rem; }
+  h1 {
+    font-size: 2rem;
+  }
 }
 
 @layer components {
-  .card { padding: 1rem; }
+  .card {
+    padding: 1rem;
+  }
 }
 
 @layer utilities {
-  .text-center { text-align: center; }
+  .text-center {
+    text-align: center;
+  }
 }
 ```
 
@@ -453,7 +462,9 @@ CSS Layers (@layer) provides control cascade dan organisasi.
 
 /* Later layers override earlier ones */
 @layer utilities {
-  .important { color: red !important; }
+  .important {
+    color: red !important;
+  }
 }
 ```
 
@@ -588,7 +599,7 @@ CSS Filters menerapkan efek visual ke elemen.
 .flower {
   aspect-ratio: 1 / 1;
   width: calc(100% - 2rem);
-  mask: 
+  mask:
     radial-gradient(circle at 30% 30%, black 20%, transparent 20%),
     radial-gradient(circle at 70% 30%, black 20%, transparent 20%),
     radial-gradient(circle at 50% 70%, black 20%, transparent 20%);
@@ -626,17 +637,17 @@ CSS Filters menerapkan efek visual ke elemen.
 
 ### Modern Feature Support
 
-| Fitur | Chrome | Firefox | Safari | Edge |
-|-------|--------|---------|--------|------|
-| CSS Mask | âœ… | âœ… | âœ… | âœ… |
-| Aspect Ratio | âœ… | âœ… | âœ… | âœ… |
-| Calc | âœ… | âœ… | âœ… | âœ… |
-| Clip Path | âœ… | âœ… | âœ… | âœ… |
-| Custom Properties | âœ… | âœ… | âœ… | âœ… |
-| Container Queries | âœ… | âœ… | âœ… | âœ… |
-| :has() | âœ… | âœ… | âœ… | âœ… |
-| CSS Layers | âœ… | âœ… | âœ… | âœ… |
-| Backdrop Filter | âœ… | âœ… | âœ… | âœ… |
+| Fitur             | Chrome | Firefox | Safari | Edge |
+| ----------------- | ------ | ------- | ------ | ---- |
+| CSS Mask          | âœ…    | âœ…     | âœ…    | âœ…  |
+| Aspect Ratio      | âœ…    | âœ…     | âœ…    | âœ…  |
+| Calc              | âœ…    | âœ…     | âœ…    | âœ…  |
+| Clip Path         | âœ…    | âœ…     | âœ…    | âœ…  |
+| Custom Properties | âœ…    | âœ…     | âœ…    | âœ…  |
+| Container Queries | âœ…    | âœ…     | âœ…    | âœ…  |
+| :has()            | âœ…    | âœ…     | âœ…    | âœ…  |
+| CSS Layers        | âœ…    | âœ…     | âœ…    | âœ…  |
+| Backdrop Filter   | âœ…    | âœ…     | âœ…    | âœ…  |
 
 ### Fallback Strategy
 
@@ -668,23 +679,22 @@ Always provide fallback for unsupported features:
 <td align="left">
 
 **[â† Previous: Prompt Templates](13%20Prompt%20Templates.md)**  
-*Prompt Templates for Role-Based Reasoning*
+_Prompt Templates for Role-Based Reasoning_
 
 </td>
 <td align="center">
 
 **[â†‘ Index](README.md)**  
-*Documentation Overview*
+_Documentation Overview_
 
 </td>
 <td align="right">
 
 **[Next: CSS Shapes & Patterns â†’](15%20CSS%20Shapes%20%26%20Patterns.md)**  
-*All Shape Types dan Patterns*
+_All Shape Types dan Patterns_
 
 </td>
 </tr>
 </table>
 
 </div>
-
