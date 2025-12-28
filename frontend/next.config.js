@@ -1,14 +1,10 @@
 /** @type {import('next').NextConfig} */
+const path = require('path')
+
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    turbo: {
-      // Turbopack configuration
-    },
-  },
+  outputFileTracingRoot: path.join(__dirname, '../'),
   images: {
-    domains: ['localhost'],
     remotePatterns: [
       {
         protocol: 'http',
@@ -21,4 +17,3 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
-
