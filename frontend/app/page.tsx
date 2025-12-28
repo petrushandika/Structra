@@ -1,27 +1,62 @@
-import { Button } from '@/components/ui/button'
-
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm">
-        <h1 className="text-4xl font-bold mb-4">🧠 Structra</h1>
-        <p className="text-xl mb-8">
-          AI-powered UI Structure Engineering Engine
-        </p>
-        <div className="space-y-4">
-          <p>
-            Structra is ready! Start building your frontend application.
-          </p>
-          <div className="flex gap-4">
-            <Button>Get Started</Button>
-            <Button variant="outline">Documentation</Button>
+    <main className="min-h-screen bg-black p-8 text-white">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-8">
+          <h1 className="mb-2 text-3xl font-bold">Components</h1>
+          <p className="text-gray-400">Browse and manage your UI components</p>
+        </div>
+
+        <div className="mb-6">
+          <h2 className="mb-4 text-xl font-semibold">Newest</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[1, 2, 3].map(item => (
+              <div
+                key={item}
+                className="rounded-xl border border-zinc-800 bg-zinc-900 p-6 transition-all duration-300 hover:border-zinc-700 hover:shadow-lg hover:shadow-blue-500/10"
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 font-semibold text-white">
+                    {item}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Component {item}</h3>
+                    <p className="text-xs text-gray-500">Default</p>
+                  </div>
+                </div>
+                <div className="flex h-40 items-center justify-center rounded-lg bg-zinc-800 text-gray-500">
+                  Preview Area
+                </div>
+              </div>
+            ))}
           </div>
-          <p className="text-sm text-gray-500">
-            Check the documentation in <code>docs/</code> folder for more information.
-          </p>
+        </div>
+
+        <div>
+          <h2 className="mb-4 text-xl font-semibold">Popular</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[4, 5, 6].map(item => (
+              <div
+                key={item}
+                className="rounded-xl border border-zinc-800 bg-zinc-900 p-6 transition-all duration-300 hover:border-zinc-700 hover:shadow-lg hover:shadow-purple-500/10"
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-600 font-semibold text-white">
+                    {item}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Component {item}</h3>
+                    <p className="text-xs text-gray-500">Default</p>
+                  </div>
+                </div>
+                <div className="flex h-40 items-center justify-center rounded-lg bg-zinc-800 text-gray-500">
+                  Preview Area
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </main>
   )
 }
-

@@ -13,7 +13,7 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "types": ["bun-types"],
+    "types": ["bun-types", "@types/node"],
     "paths": {
       "@/*": ["./src/*"]
     }
@@ -21,4 +21,3 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
-
